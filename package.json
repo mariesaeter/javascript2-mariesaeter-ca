@@ -1,0 +1,29 @@
+{
+  "name": "javascript2-mariesaeter-ca",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass scss:css",
+    "watch": "sass --watch scss:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariesaeter/javascript2-mariesaeter-ca.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariesaeter/javascript2-mariesaeter-ca/issues"
+  },
+  "homepage": "https://github.com/mariesaeter/javascript2-mariesaeter-ca#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "node-sass": "^8.0.0"
+  },
+  "devDependencies": {
+    "sass": "^1.58.0"
+  }
+}
