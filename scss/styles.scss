@@ -1,1 +1,47 @@
+@import "variables";
+@import "nav";
+
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+.small-profile-img {
+  width: 40px;
+  height: 40px;
+}
+
+.medium-profile-img {
+  width: 50px;
+  height: 50px;
+}
+
+.large-profile-img {
+  width: 70px;
+  height: 70px;
+}
+
+i {
+  font-size: 32px;
+  color: $pink;
+}
+
+.small-icon {
+  font-size: 16px;
+}
+
+.navbar {
+  background-color: $gray-100;
+}
+
+// inspiration from https://mdbootstrap.com/docs/standard/extended/search-expanding/
+
+.search-open {
+  border: none;
+  outline: none;
+  width: 50px;
+  height: 50px;
+  padding: 25px;
+  transition: all 0.5s;
+}
+.search-open:focus {
+  width: 300px;
+  padding-left: 50px;
+}

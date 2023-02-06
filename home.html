@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Home page of Bokvenn" />
+    <title>Bokvenn | Home</title>
+     <!-- Website icon -->
+     <link
+     rel="icon"
+     type="image/svg"
+     sizes="16x16"
+     href="/images/home-icon.png"
+   />
+   <link
+     rel="icon"
+     type="image/svg"
+     sizes="32x32"
+     href="/images/home-icon.png"
+   />
+   <!-- Bootstrap stylesheet -->
+   <link
+     rel="stylesheet"
+     href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+   />
+   <link rel="stylesheet" href="css/styles.css" />
+   <!-- Fontawsome icons script -->
+   <script
+     src="https://kit.fontawesome.com/a2324745d3.js"
+     crossorigin="anonymous"
+   ></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar shadow fixed-top">
+        <div
+          class="container-fluid justify-content-between mx-md-4 mx-lg-4 mx-xl-5"
+        >
+          <a class="navbar-brand w-25" href="home.html"
+            ><img src="images/logo.png" alt="Bokvenn logo"
+          /></a>
+          <ul class="navbar-nav nav flex-row align-items-center">
+            <li class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase">
+              <a
+                class="nav-link active d-flex flex-column align-items-center"
+                aria-current="page"
+                href="home.html"
+                ><img
+                  src="images/home-icon.png"
+                  class="w-50"
+                  alt="Icon formed as a B for Bokvenn"
+                /><span class="mt-1">Home</span></a
+              >
+            </li>
+            <li
+              class="nav-item text-uppercase d-flex justify-content-center mx-md-1 mx-lg-1"
+            >
+              <a class="nav-link text-center w-50" href="index.html"
+                >Sign out</a
+              >
+            </li>
+            <li class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase">
+              <a
+                class="nav-link d-flex flex-column align-items-center"
+                href="profile.html"
+                ><img
+                  src="images/profiles/profile5.jpg"
+                  class="rounded-circle small-profile-img"
+                  alt="Sara's profile image"
+                /><span class="mt-1">Profile</span></a
+              >
+            </li>
+            <li
+              class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase position-relative"
+            >
+              <form>
+                <a
+                  class="nav-link d-flex flex-column align-items-center position-absolute search p-0"
+                >
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <span class="mt-1">Search</span>
+                </a>
+                <input
+                  type="search"
+                  class="search-open position-relative overflow-hidden bg-transparent form-control"
+                  placeholder="search here..."
+                />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Main -->
+    <main class="mx-3 mx-sm-2 mt-5 pt-2">
+      <div class="container p-3 my-3">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-12 col-sm-12 col-md-9 col-l-7 col-xl-7">
+            <h1>Newsfeed</h1>
+            <!-- Create new post -->
+            <div class="bg-white rounded shadow p-3 my-3">
+              <div class="align-items-center">
+                <a href="profile.html">
+                  <img
+                    src="images/profiles/profile5.jpg"
+                    class="rounded-circle medium-profile-img"
+                    alt="Sara's profile image"
+                  />
+                </a>
+                <a href="profile.html">Sara Donau</a>
+              </div>
+              <div class="mt-3">
+                <select
+                  class="form-select rounded"
+                  aria-label="select reading status"
+                >
+                  <option selected>Choose your reading status</option>
+                  <option value="1">Reading right now</option>
+                  <option value="2">Finished book</option>
+                  <option value="3">DNF'ed book</option>
+                  <option value="4">No reading status</option>
+                </select>
+                <textarea
+                  class="form-control rounded mt-3"
+                  placeholder="What do you want to say?"
+                ></textarea>
+                <button
+                  type="submit"
+                  class="btn btn-primary text-white mt-3 d-block w-100 rounded-pill"
+                >
+                  Post
+                </button>
+              </div>
+            </div>
+            <!-- Post 1 -->
+            <div class="card shadow p-3 my-4">
+              <div class="d-flex">
+                <a href="profile.html">
+                  <img
+                    src="images/profiles/profile5.jpg"
+                    class="rounded-circle medium-profile-img"
+                    alt="Sara's profile image"
+                  />
+                </a>
+                <div class="ms-2 w-100">
+                  <div class="d-flex justify-content-between">
+                    <a href="#">Sara Donau</a>
+                    <small class="fw-light">1 hour ago</small>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <i class="fa-solid fa-circle-xmark small-icon"></i>
+                    <small class="fw-light ps-1">DNF'ed Assassins Quest</small>
+                  </div>
+                </div>
+              </div>
+              <!-- Post content -->
+              <p class="pt-4 px-2">
+                I'm so sad to be DNF'ing this, but I just couldn't hang on to
+                the plot, maybe I'll try again some other time.
+              </p>
+              <p class="px-2">
+                Do anyone have any recommendations for what I can read next to
+                not end up in a reading slump?
+              </p>
+              <div class="d-flex">
+                <a href="#">Like</a>
+                <a class="ms-4" href="#">Comment</a>
+              </div>
+              <!-- Post comments -->
+              <div class="d-flex mt-3">
+                <a href="profile.html">
+                  <img
+                    src="images/profiles/profile5.jpg"
+                    class="rounded-circle medium-profile-img"
+                    alt="Sara's profile image"
+                  />
+                </a>
+                <input
+                  type="text"
+                  class="form-control ms-3"
+                  placeholder="Write comment here..."
+                />
+              </div>
+              <div class="d-flex mt-3 align-items-center">
+                <a href="profile.html">
+                  <img
+                    src="images/profiles/profile8.jpg"
+                    class="rounded-circle medium-profile-img"
+                    alt="Elliot's profile image"
+                  />
+                </a>
+                <div class="bg-secondary rounded ms-3 w-100 pt-1 ps-2">
+                  <a href="#">Elliot Sanders</a>
+                  <p class="fw-light">Oh noo, poor you : (</p>
+                  <p class="fw-light">
+                    What about reading some cozy fantasy / magic realism like
+                    "The Very Secret Society of Irregular Witches", "Legends and
+                    Lattes" or a middlegrade?
+                  </p>
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <small>No more comments</small>
+              </div>
+            </div>
+            <!-- Post 2 -->
+            <div class="card shadow p-3 my-4">
+              <div class="d-flex">
+                <a href="profile.html">
+                  <img
+                    src="images/profiles/profile7.jpg"
+                    class="rounded-circle medium-profile-img"
+                    alt="Clair's profile image"
+                  />
+                </a>
+                <div class="ms-2 w-100">
+                  <div class="d-flex justify-content-between">
+                    <a href="#">Clair Unadiull</a>
+                    <small class="fw-light">2 days ago</small>
+                  </div>
+                </div>
+              </div>
+              <!-- Post content -->
+              <p class="pt-4 px-2">
+                Me and <a href="profile.html">Sara</a> are thinking of
+                buddy-reading Wolfsong by T.J. Klune next week. Let us know if
+                anybody wants to join in!
+              </p>
+              <div class="d-flex">
+                <a href="#">Like</a>
+                <a class="ms-4" href="#">Comment</a>
+              </div>
+              <!-- Post comments -->
+              <div class="d-flex mt-3">
+                <a href="profile.html">
+                  <img
+                    src="images/profiles/profile5.jpg"
+                    class="rounded-circle medium-profile-img"
+                    alt="Sara's profile image"
+                  />
+                </a>
+                <input
+                  type="text"
+                  class="form-control ms-3"
+                  placeholder="Write comment here..."
+                />
+              </div>
+              <div class="d-flex mt-3 align-items-center">
+                <a href="profile.html">
+                  <img
+                    src="images/profiles/profile-no-image.png"
+                    class="rounded-circle medium-profile-img"
+                    alt="Steiner's profile image"
+                  />
+                </a>
+                <div class="bg-secondary rounded ms-3 w-100 pt-1 ps-2">
+                  <a href="#">Steiner Gullskoghaugen</a>
+                  <p class="fw-light">
+                    I would love to join in. I've been so exicted to read that
+                    book!
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex mt-2 align-items-center">
+                <a href="profile.html">
+                  <img
+                    src="images/profiles/profile5.jpg"
+                    class="rounded-circle medium-profile-img"
+                    alt="Sara's profile image"
+                  />
+                </a>
+                <div class="bg-secondary rounded ms-3 w-100 pt-1 ps-2">
+                  <a href="#">Sara Donanu</a>
+                  <p class="fw-light">
+                    I'm looking forward to rereading this with you guys!!
+                  </p>
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <small>No more comments</small>
+              </div>
+            </div>
+            <!-- Post 3 -->
+            <div class="card shadow p-3 my-4">
+              <div class="d-flex">
+                <a href="profile.html">
+                  <img
+                    src="images/profiles/profile-no-image.png"
+                    class="rounded-circle medium-profile-img"
+                    alt="Maria's profile image"
+                  />
+                </a>
+                <div class="ms-2 w-100">
+                  <div class="d-flex justify-content-between">
+                    <a href="#">Maria Scariva</a>
+                    <small class="fw-light">1 week ago</small>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <i class="fa-solid fa-book-open small-icon"></i>
+                    <small class="fw-light ps-1"
+                      >reading The Nature of Witches</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Post content -->
+              <p class="pt-4 px-2">
+                I'm almost halfway through The Nature of Witches by Rachel
+                Griffin now, and I can't seem to put down the book! I think my
+                plans today have changed to staying by the fire and finishing
+                this of.
+              </p>
+              <div class="d-flex">
+                <a href="#">Like</a>
+                <a class="ms-4" href="#">Comment</a>
+              </div>
+              <!-- Post comments -->
+              <div class="d-flex mt-3">
+                <a href="profile.html">
+                  <img
+                    src="images/profiles/profile5.jpg"
+                    class="rounded-circle medium-profile-img"
+                    alt="Sara's profile image"
+                  />
+                </a>
+                <input
+                  type="text"
+                  class="form-control ms-3"
+                  placeholder="Write comment here..."
+                />
+              </div>
+              <div class="d-flex mt-3 align-items-center">
+                <a href="profile.html">
+                  <img
+                    src="images/profiles/profile-no-image.png"
+                    class="rounded-circle medium-profile-img"
+                    alt="Steiner's profile image"
+                  />
+                </a>
+                <div class="bg-secondary rounded ms-3 w-100 pt-1 ps-2">
+                  <a href="#">Steiner Gullskoghaugen</a>
+                  <p class="fw-light">
+                    I read this book last year, and I totally understand how you
+                    feel!
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex mt-2 align-items-center">
+                <a href="profile.html">
+                  <img
+                    src="images/profiles/profile7.jpg"
+                    class="rounded-circle medium-profile-img"
+                    alt="Clair's profile image"
+                  />
+                </a>
+                <div class="bg-secondary rounded ms-3 w-100 pt-1 ps-2">
+                  <a href="#">Clair Unadiull</a>
+                  <p class="fw-light">
+                    This was my favorite book of 2022, hope you enjoy reading it
+                    as well!
+                  </p>
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <a href="#">View all comments</a>
+              </div>
+            </div>
+            <!-- Post 4 -->
+            <div class="card shadow p-3 my-4">
+              <div class="d-flex">
+                <a href="profile.html">
+                  <img
+                    src="images/profiles/profile1.jpg"
+                    class="rounded-circle medium-profile-img"
+                    alt="Alexis' profile image"
+                  />
+                </a>
+                <div class="ms-2 w-100">
+                  <div class="d-flex justify-content-between">
+                    <a href="#">Alexis Summers</a>
+                    <small class="fw-light">3 weeks ago</small>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <i class="fa-solid fa-book small-icon"></i>
+                    <small class="fw-light ps-1">finished Spellslinger</small>
+                  </div>
+                </div>
+              </div>
+              <!-- Post content -->
+              <p class="pt-4 px-2">
+                This was... Amazing! Can't wait to continue on with this series!
+              </p>
+              <div class="d-flex">
+                <a href="#">Like</a>
+                <a class="ms-4" href="#">Comment</a>
+              </div>
+              <!-- Post comments -->
+              <div class="d-flex mt-3">
+                <a href="profile.html">
+                  <img
+                    src="images/profiles/profile5.jpg"
+                    class="rounded-circle medium-profile-img"
+                    alt="Sara's profile image"
+                  />
+                </a>
+                <input
+                  type="text"
+                  class="form-control ms-3"
+                  placeholder="Write comment here..."
+                />
+              </div>
+              <div class="d-flex mt-3 align-items-center">
+                <a href="profile.html">
+                  <img
+                    src="images/profiles/profile5.jpg"
+                    class="rounded-circle medium-profile-img"
+                    alt="Sara's profile image"
+                  />
+                </a>
+                <div class="bg-secondary rounded ms-3 w-100 pt-1 ps-2">
+                  <a href="#">Sara Donanu</a>
+                  <p class="fw-light">I know!!</p>
+                </div>
+              </div>
+              <div class="text-center mt-3">
+                <small>No more comments</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center p-4">
+            <small>
+              Share your love for books with friends and invite them to join
+              you!
+            </small>
+          </div>
+          <div class="col-12 text-center mb-3">
+            <small>Copyright 2023 bokvenn</small>
+          </div>
+          <div class="col-6 text-center pb-3">
+            <a href="#" class="text-uppercase">About bokvenn</a>
+          </div>
+          <div class="col-6 text-center">
+            <a href="#" class="text-uppercase">faq</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>
