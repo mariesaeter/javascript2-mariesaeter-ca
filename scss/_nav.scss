@@ -1,0 +1,15 @@
+.nav-link {
+  color: $black !important;
+}
+
+.nav-link:hover {
+  color: $pink !important;
+}
+
+.nav-item .active {
+  color: $pink-400 !important;
+}
+
+.navbar-brand img {
+  height: 1rem;
+}

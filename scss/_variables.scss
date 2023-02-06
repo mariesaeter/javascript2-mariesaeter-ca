@@ -1,0 +1,93 @@
+// start gray color-variables
+$white: #fcfbfa;
+$gray-100: #f7f4f2;
+$gray-200: #d8cac0;
+$gray-300: #b9a08d;
+$gray-400: #8b6d55;
+$gray-700: #b4b7bb;
+$gray-800: #898e94;
+$gray-900: #4e5256;
+$black: #27292b;
+// end gray color-variables
+
+// start color-variables
+$pink: #cc6666;
+$red: #d42222;
+$green: #2c8f31;
+$orange: #e86a02;
+// end color-variables
+
+// start colors-map
+$colors: (
+  "gray": $gray-700,
+  "gray-dark": $gray-900,
+);
+// end colors-map
+
+// start pink color-variables
+$pink-100: #f0d1d1;
+$pink-200: #e1a3a3;
+$pink-400: #993333;
+$pink-500: #5c1f1f;
+// end pink color-variables
+
+// start theme-color-variables
+$primary: $pink;
+$secondary: $pink-100;
+$warning: $orange;
+// end theme-color-variables
+
+// Settings for the `<body>`element.
+$body-bg: $gray-100;
+$body-color: $black;
+
+// Links
+//
+$link-color: $pink-400;
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+// start border-variables
+$border-color: $primary;
+// end border-variables
+
+// box-shadow-variables
+//
+$box-shadow: 0 0.5rem 1.5rem rgba($gray-900, 0.15);
+
+// Typography
+
+// font-family
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+// font variables
+$font-family-sans-serif: "Work Sans", sans-serif;
+$font-family-monospace: "Work Sans", monospace;
+
+// headings-variables
+$headings-font-weight: 400;
+$headings-color: $black;
+
+// Buttons + Forms
+//
+$btn-font-weight: 500;
+
+// Forms
+$input-bg: $white;
+$input-border-color: $pink;
+$input-border-radius: 50rem;
+
+$form-select-bg: rgba($gray-700, 0.15);
+
+// border radius
+
+// Navigation
+$nav-link-font-size: 0.75rem;
+
+// navbar-variables
+$navbar-padding-y: 0;
+
+// cards
+//
+$card-border-color: none;
+$card-bg: $white;
