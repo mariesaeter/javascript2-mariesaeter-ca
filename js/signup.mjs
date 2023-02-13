@@ -29,26 +29,15 @@ async function registerUser(url, data) {
   }
 }
 
-const user = [
-  { name: document.getElementById("inputName").value },
-  { email: document.getElementById("inputEmail").value },
-  { password: document.getElementById("inputPassword").value },
-];
+const btnRegister = document.getElementById("register-btn");
+btnRegister.onclick = (e) => {
+  e.preventDefault();
+  const user = {
+    name: document.getElementById("inputName").value,
+    email: document.getElementById("inputEmail").value,
+    password: document.getElementById("inputPassword").value,
+  };
+  console.log(user);
 
-console.log(user);
-
-registerUser(`${api_Url_Base}/auth/register`, user);
-
-let users = [];
-
-// const btnRegister = document.getElementById("register-btn");
-// btnRegister.onclick = (e) => {
-//   const user = [
-//     { name: document.getElementById("inputName").value },
-//     { email: document.getElementById("inputEmail").value },
-//     { password: document.getElementById("inputPassword").value },
-//   ];
-//   return user;
-//   //   users.push(user);
-//   //   localStorage.setItem("Users", JSON.stringify(users));
-// };
+  registerUser(`${api_Url_Base}/auth/register`, user);
+};
