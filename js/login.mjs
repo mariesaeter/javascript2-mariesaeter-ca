@@ -1,6 +1,7 @@
 import { api_Url_Base } from "./main.mjs";
-import { POST_Options } from "./main.mjs";
+// import { POST_Options } from "./main.mjs";
 // import { postData } from "./main.mjs";
+const form = document.querySelector("#loginForm");
 
 async function signInUser(url, data) {
   try {
@@ -26,14 +27,23 @@ async function signInUser(url, data) {
   }
 }
 
-const btnLogIn = document.getElementById("login-btn");
-btnLogIn.onclick = (e) => {
-  e.preventDefault();
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const form = event.target;
   const user = {
-    email: document.getElementById("inputEmail").value,
-    password: document.getElementById("inputPassword").value,
+    email: form.email.value,
+    password: form.password.value,
   };
-  console.log(user);
-
   signInUser(`${api_Url_Base}/auth/login`, user);
-};
+});
+// const btnLogIn = document.getElementById("login-btn");
+// btnLogIn.onclick = (e) => {
+//   e.preventDefault();
+//   const user = {
+//     email: document.getElementById("inputEmail").value,
+//     password: document.getElementById("inputPassword").value,
+//   };
+//   console.log(user);
+
+//   signInUser(`${api_Url_Base}/auth/login`, user);
+// };

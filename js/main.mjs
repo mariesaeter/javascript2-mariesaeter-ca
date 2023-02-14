@@ -1,11 +1,11 @@
 export const api_Url_Base = "https://api.noroff.dev/api/v1/social";
 
-export const POST_Options = {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-};
+// export const POST_Options = {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+// };
 
 // export async function postData(url, data) {
 //   const options = {
@@ -21,3 +21,11 @@ export const POST_Options = {
 //   console.log(json);
 //   return json;
 // }
+
+// const options = {
+//   method: method,
+//   headers: headers,
+//   body: body,
+// };
+
+// fetch(request).then((response => response.json()))
