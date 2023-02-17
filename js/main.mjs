@@ -1,4 +1,9 @@
 export const api_Url_Base = "https://api.noroff.dev/api/v1/social";
+export const api_register = `${api_Url_Base}/auth/register`;
+export const api_login = `${api_Url_Base}/auth/login`;
+
+export const methodPost = "post";
+export const pathProfile = "../profile.html";
 
 // export const POST_Options = {
 //   method: "POST",
@@ -29,3 +34,15 @@ export const api_Url_Base = "https://api.noroff.dev/api/v1/social";
 // };
 
 // fetch(request).then((response => response.json()))
+
+// export function loginRegister() {
+//   const form = document.querySelector("#loginForm");
+
+//   form.addEventListener("submit", (event) => {
+//     event.preventDefault();
+//     const form = event.target;
+//     const formData = new FormData(form);
+//     const user = Object.fromEntries(formData.entries());
+//     console.log(user);
+//   });
+// }

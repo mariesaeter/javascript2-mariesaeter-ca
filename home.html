@@ -110,8 +110,8 @@
                 </a>
                 <a href="profile.html">Sara Donau</a>
               </div>
-              <div class="mt-3">
-                <select
+              <form class="mt-3" id="post-form">
+                <select name="title"
                   class="form-select rounded"
                   aria-label="select reading status"
                 >
@@ -121,7 +121,7 @@
                   <option value="3">DNF'ed book</option>
                   <option value="4">No reading status</option>
                 </select>
-                <textarea
+                <textarea name="body"
                   class="form-control rounded mt-3"
                   placeholder="What do you want to say?"
                 ></textarea>
@@ -453,5 +453,6 @@
         </div>
       </div>
     </footer>
+    <script type="module" src="/js/posts/createposts.mjs"></script>
 </body>
 </html>
