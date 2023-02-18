@@ -1,5 +1,5 @@
-import { methodPost as method } from "../main.mjs";
-import { api_register } from "../main.mjs";
+import { methodPost as method } from "../url/constants.mjs";
+import { api_register } from "../url/constants.mjs";
 
 export async function registerUser(user) {
   const body = JSON.stringify(user);

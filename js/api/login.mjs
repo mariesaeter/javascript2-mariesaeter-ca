@@ -1,5 +1,5 @@
-import { methodPost as method } from "../main.mjs";
-import { api_login } from "../main.mjs";
+import { methodPost as method } from "../url/constants.mjs";
+import { api_login } from "../url/constants.mjs";
 import * as storage from "../storage/index.mjs";
 
 export async function signInUser(user) {

@@ -1,8 +1,8 @@
-import { api_Url_Base } from "./main.mjs";
+import { api_Url_Base } from "../url/constants.mjs";
 // import { POST_Options } from "./main.mjs";
 // import { postData } from "./main.mjs";
-import { pathProfile as path } from "./main.mjs";
-import { signInUser } from "./api/login.mjs";
+import { pathProfile as path } from "../url/constants.mjs";
+import { signInUser } from "../api/login.mjs";
 
 function setLoginForm() {
   const form = document.querySelector("#loginForm");
@@ -20,12 +20,11 @@ function setLoginForm() {
 
 setLoginForm();
 
-export function getAccessToken() {
-  if (localStorage.getItem("accessToken")) {
-    const access = localStorage.getItem("accessToken");
-    console.log(access);
-  }
-}
+// export function getAccessToken() {
+//   if (localStorage.getItem("accessToken")) {
+//     const access = localStorage.getItem("accessToken");
+//     console.log(access);
+//   }}
 
 // form.addEventListener("submit", (event) => {
 //   event.preventDefault();

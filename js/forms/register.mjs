@@ -1,7 +1,7 @@
 // import { api_Url_Base } from "./main.mjs";
 // import { POST_Options } from "./main.mjs";
 // import { methodPost as method } from "./main.mjs";
-import { registerUser } from "./api/register.mjs";
+import { registerUser } from "../api/register.mjs";
 
 function setRegisterForm() {
   const form = document.querySelector("#register-form");
