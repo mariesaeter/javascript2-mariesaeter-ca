@@ -110,17 +110,24 @@
                 </a>
                 <a href="profile.html">Sara Donau</a>
               </div>
-              <form class="mt-3" id="post-form">
-                <select name="title"
+              <form class="mt-3" id="createPostForm">
+                <select name="selectTitle"
                   class="form-select rounded"
                   aria-label="select reading status"
                 >
                   <option selected>Choose your reading status</option>
-                  <option value="1">Reading right now</option>
-                  <option value="2">Finished book</option>
-                  <option value="3">DNF'ed book</option>
-                  <option value="4">No reading status</option>
+                  <option value="Reading right now">Reading right now</option>
+                  <option value="Finished book">Finished book</option>
+                  <option value="DNF'ed book">DNF'ed book</option>
+                  <option value="No reading status">No reading status</option>
                 </select>
+                  <input
+                    type="text"
+                    name="bookTitle"
+                    class="form-control mt-3"
+                    id="inputBook"
+                    placeholder="What book (optional)"
+                  />
                 <textarea name="body"
                   class="form-control rounded mt-3"
                   placeholder="What do you want to say?"
@@ -453,6 +460,6 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="/js/posts/createposts.mjs"></script>
+    <script type="module" src="/js/index.mjs"></script>
 </body>
 </html>
