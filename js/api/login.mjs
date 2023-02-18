@@ -1,5 +1,6 @@
 import { methodPost as method } from "../main.mjs";
 import { api_login } from "../main.mjs";
+import * as storage from "../storage/index.mjs";
 
 export async function signInUser(user) {
   const body = JSON.stringify(user);
@@ -13,13 +14,12 @@ export async function signInUser(user) {
       body,
     });
 
-    const json = await response.json();
-    console.log(json);
+    const { accessToken, ...profile } = await response.json();
 
-    const accessToken = json.accessToken;
-    localStorage.setItem("accessToken", accessToken);
-
-    return json;
+    // save the access token
+    storage.saveLocal("accessToken", accessToken);
+    // save the profile separate from the token
+    storage.saveLocal("profile", profile);
   } catch (error) {
     console.log(error);
   }
