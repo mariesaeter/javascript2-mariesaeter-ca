@@ -1,6 +1,7 @@
 import { deletePost } from "./api/posts/deleteposts.mjs";
 import { setCreatePostForm } from "./forms/createPosts.mjs";
-import { readPosts } from "./api/posts/readposts.mjs";
+import { readPost, readPosts } from "./api/posts/readposts.mjs";
+import { displayPosts } from "./html/posts/displayPost.mjs";
 
 // posts
 
@@ -8,4 +9,4 @@ import { readPosts } from "./api/posts/readposts.mjs";
 setCreatePostForm();
 
 // read posts
-readPosts();
+displayPosts();
