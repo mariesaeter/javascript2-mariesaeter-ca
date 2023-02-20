@@ -2,9 +2,9 @@ import { api_posts } from "../../url/constants.mjs";
 import { methodDelete as method } from "../../url/constants.mjs";
 import { tokenFetch } from "../tokenFetch.mjs";
 
-export async function deletePost(postData) {
-  const body = JSON.stringify(postData);
-  const deletePostUrl = `${api_posts}/${postData.id}`;
+export async function deletePost(id) {
+  const body = JSON.stringify(id);
+  const deletePostUrl = `${api_posts}/${id}`;
 
   try {
     const response = await tokenFetch(deletePostUrl, {
