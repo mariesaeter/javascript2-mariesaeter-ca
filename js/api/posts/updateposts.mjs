@@ -7,6 +7,9 @@ export async function updatePost(postData) {
   const updatePostUrl = `${api_posts}/${postData.id}`;
 
   try {
+    if (!postData.id) {
+      throw new Error("Update requires a postID");
+    }
     const response = await tokenFetch(updatePostUrl, {
       method,
       body,
