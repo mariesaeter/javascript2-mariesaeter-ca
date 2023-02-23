@@ -22,9 +22,9 @@
    <!-- Bootstrap stylesheet -->
    <link
      rel="stylesheet"
-     href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+     href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
    />
-   <link rel="stylesheet" href="css/styles.css" />
+   <link rel="stylesheet" href="/css/styles.css" />
    <!-- Fontawsome icons script -->
    <script
      src="https://kit.fontawesome.com/a2324745d3.js"
@@ -37,17 +37,17 @@
         <div
           class="container-fluid justify-content-between mx-md-4 mx-lg-4 mx-xl-5"
         >
-          <a class="navbar-brand w-25" href="home.html"
-            ><img src="images/logo.png" alt="Bokvenn logo"
+          <a class="navbar-brand w-25" href="/home.html"
+            ><img src="/images/logo.png" alt="Bokvenn logo"
           /></a>
           <ul class="navbar-nav nav flex-row align-items-center">
             <li class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase">
               <a
                 class="nav-link active d-flex flex-column align-items-center"
                 aria-current="page"
-                href="home.html"
+                href="/home.html"
                 ><img
-                  src="images/home-icon.png"
+                  src="/images/home-icon.png"
                   class="w-50"
                   alt="Icon formed as a B for Bokvenn"
                 /><span class="mt-1">Home</span></a
@@ -56,16 +56,16 @@
             <li
               class="nav-item text-uppercase d-flex justify-content-center mx-md-1 mx-lg-1"
             >
-              <a class="nav-link text-center w-50" href="index.html"
+              <a class="nav-link text-center w-50" href="/index.html"
                 >Sign out</a
               >
             </li>
             <li class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase">
               <a
                 class="nav-link d-flex flex-column align-items-center"
-                href="profile.html"
+                href="/profile.html"
                 ><img
-                  src="images/profiles/profile5.jpg"
+                  src="/images/profiles/profile5.jpg"
                   class="rounded-circle small-profile-img"
                   alt="Sara's profile image"
                 /><span class="mt-1">Profile</span></a
@@ -101,14 +101,14 @@
             <!-- Create new post -->
             <div class="bg-white rounded shadow p-3 my-3">
               <div class="align-items-center">
-                <a href="profile.html">
+                <a href="/profile.html">
                   <img
-                    src="images/profiles/profile5.jpg"
+                    src="/images/profiles/profile5.jpg"
                     class="rounded-circle medium-profile-img"
                     alt="Sara's profile image"
                   />
                 </a>
-                <a href="profile.html">Sara Donau</a>
+                <a href="/profile.html">Sara Donau</a>
               </div>
               <form class="mt-3" id="createPostForm">
                 <select name="selectTitle"
@@ -138,64 +138,20 @@
                   type="submit"
                   class="btn btn-primary text-white mt-3 d-block w-100 rounded-pill"
                 >
-                  Update post
+                  Create post
                 </button>
                 </form>
               </div>
-            </div>
-            <!-- Edit post  -->
-            <!-- Create new post -->
-            <div class="bg-white rounded shadow p-3 my-3">
-              <div class="align-items-center">
-                <a href="profile.html">
-                  <img
-                    src="images/profiles/profile5.jpg"
-                    class="rounded-circle medium-profile-img"
-                    alt="Sara's profile image"
-                  />
-                </a>
-                <a href="profile.html">Sara Donau</a>
               </div>
-              <form class="mt-3" id="editPostForm">
-                <select name="selectTitle"
-                  class="form-select rounded"
-                  aria-label="select reading status"
-                  required
-                >
-                  <option selected>Choose your reading status</option>
-                  <option value="Reading right now">Reading right now</option>
-                  <option value="Finished book">Finished book</option>
-                  <option value="DNF'ed book">DNF'ed book</option>
-                  <option value="No reading status">No reading status</option>
-                </select>
-                  <input
-                    type="text"
-                    name="bookTitle"
-                    class="form-control mt-3"
-                    id="inputBook"
-                    placeholder="What book (optional)"
-                  />
-                <textarea name="body"
-                  class="form-control rounded mt-3"
-                  placeholder="What do you want to say?"
-                  required
-                ></textarea>
-                <button
-                  type="submit"
-                  class="btn btn-primary text-white mt-3 d-block w-100 rounded-pill"
-                >
-                  Post
-                </button>
-                </form>
               </div>
-            </div>
+           
             <!-- Post 1 -->
             <section id="posts">
             <div class="card shadow p-3 my-4">
               <div class="d-flex">
-                <a href="profile.html">
+                <a href="/profile.html">
                   <img
-                    src="images/profiles/profile5.jpg"
+                    src="/images/profiles/profile5.jpg"
                     class="rounded-circle medium-profile-img"
                     alt="Sara's profile image"
                   />
@@ -226,9 +182,9 @@
               </div>
               <!-- Post comments -->
               <div class="d-flex mt-3">
-                <a href="profile.html">
+                <a href="/profile.html">
                   <img
-                    src="images/profiles/profile5.jpg"
+                    src="/images/profiles/profile5.jpg"
                     class="rounded-circle medium-profile-img"
                     alt="Sara's profile image"
                   />
@@ -240,9 +196,9 @@
                 />
               </div>
               <div class="d-flex mt-3 align-items-center">
-                <a href="profile.html">
+                <a href="/profile.html">
                   <img
-                    src="images/profiles/profile8.jpg"
+                    src="/images/profiles/profile8.jpg"
                     class="rounded-circle medium-profile-img"
                     alt="Elliot's profile image"
                   />
