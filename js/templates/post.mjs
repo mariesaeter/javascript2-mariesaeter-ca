@@ -84,27 +84,33 @@ export function postTemplate(postData) {
   commentLink.className = "ms-3";
   const commentLinkText = document.createTextNode("commment");
 
+  likeLink.appendChild(likeLinkText);
+  commentLink.appendChild(commentLinkText);
+  linkChildDivOne.append(likeLink, commentLink);
+
+  //   if () {
   const linkChildDivTwo = document.createElement("div");
   const updateLink = document.createElement("a");
-  updateLink.setAttribute("href", "/post/edit/");
+  updateLink.setAttribute("href", `/post/edit/?id=${postData.id}`);
   const updateLinkText = document.createTextNode("update");
   const deleteLink = document.createElement("a");
   deleteLink.setAttribute("href", "#");
   deleteLink.className = "ms-3";
   const deleteLinkText = document.createTextNode("delete");
 
-  likeLink.appendChild(likeLinkText);
-  commentLink.appendChild(commentLinkText);
   updateLink.appendChild(updateLinkText);
   deleteLink.appendChild(deleteLinkText);
+
+  linkChildDivTwo.append(updateLink, deleteLink);
+  childDivTwo.append(linkChildDivOne, linkChildDivTwo);
+  // } else {
+  childDivTwo.appendChild(linkChildDivOne);
+  // }
 
   thirdChildDivOne.append(userName, postDateContainer);
   thirdChildDivTwo.appendChild(postTitleContainer);
   secondChildDivOne.append(thirdChildDivOne, thirdChildDivTwo);
   childDivOne.append(userAvatar, secondChildDivOne);
-  linkChildDivOne.append(likeLink, commentLink);
-  linkChildDivTwo.append(updateLink, deleteLink);
-  childDivTwo.append(linkChildDivOne, linkChildDivTwo);
 
   // add everything to the main div
   mainDiv.append(childDivOne, bodyContainer, childDivTwo);
