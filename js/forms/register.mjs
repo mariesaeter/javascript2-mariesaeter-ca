@@ -3,7 +3,7 @@
 // import { methodPost as method } from "./main.mjs";
 import { registerUser } from "../api/register.mjs";
 
-function setRegisterForm() {
+export function setRegisterForm() {
   const form = document.querySelector("#register-form");
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -15,8 +15,6 @@ function setRegisterForm() {
     registerUser(user);
   });
 }
-
-setRegisterForm();
 
 // form.addEventListener("submit", (event) => {
 //   event.preventDefault();

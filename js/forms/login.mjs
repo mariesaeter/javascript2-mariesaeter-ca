@@ -4,7 +4,7 @@ import { api_Url_Base } from "../url/constants.mjs";
 import { pathProfile as path } from "../url/constants.mjs";
 import { signInUser } from "../api/login.mjs";
 
-function setLoginForm() {
+export function setLoginForm() {
   const form = document.querySelector("#loginForm");
 
   form.addEventListener("submit", (event) => {
@@ -17,8 +17,6 @@ function setLoginForm() {
     signInUser(user);
   });
 }
-
-setLoginForm();
 
 // export function getAccessToken() {
 //   if (localStorage.getItem("accessToken")) {
