@@ -20,6 +20,9 @@ export async function signInUser(user) {
     storage.saveLocal("accessToken", accessToken);
     // save the profile separate from the token
     storage.saveLocal("profile", profile);
+
+    // send user to profile page
+    window.location = "/../profile/";
   } catch (error) {
     console.log(error);
   }

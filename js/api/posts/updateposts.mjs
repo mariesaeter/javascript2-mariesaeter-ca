@@ -10,6 +10,7 @@ export async function updatePost(postData) {
     if (!postData.id) {
       throw new Error("Update requires a postID");
     }
+
     const response = await tokenFetch(updatePostUrl, {
       method,
       body,

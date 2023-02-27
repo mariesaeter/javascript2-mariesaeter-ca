@@ -1,9 +1,11 @@
 import * as listeners from "./forms/index.mjs";
+import { displayPosts } from "./posts/displayPosts.mjs";
 
 export default function router() {
   const path = location.pathname;
 
   switch (path) {
+    // more listeners
     case "/profile/login/":
       listeners.setLoginForm();
       break;
@@ -13,8 +15,12 @@ export default function router() {
     case "/profile/edit/":
       listeners.setUpdateProfileForm();
       break;
-    case "/post/create/":
+    case "/profile/":
       listeners.setCreatePostForm();
+    // display posts for that user
+    case "/home/":
+      listeners.setCreatePostForm();
+      displayPosts();
       break;
     case "/post/edit/":
       listeners.setUpdatePostForm();

@@ -22,9 +22,9 @@
     <!-- Bootstrap stylesheet -->
     <link
       rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <!-- Fontawsome icons script -->
     <script
       src="https://kit.fontawesome.com/a2324745d3.js"
@@ -38,16 +38,16 @@
         <div
           class="container-fluid justify-content-between mx-3 mx-md-4 mx-lg-4 mx-xl-5"
         >
-          <a class="navbar-brand w-25" href="index.html"
-            ><img src="images/logo.png" alt="Bokvenn logo"
+          <a class="navbar-brand w-25" href="/index.html"
+            ><img src="/images/logo.png" alt="Bokvenn logo"
           /></a>
           <ul class="navbar-nav nav flex-row align-items-center">
             <li class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase">
               <a
                 class="nav-link d-flex flex-column align-items-center"
-                href="index.html"
+                href="/index.html"
                 ><img
-                  src="images/home-icon.png"
+                  src="/images/home-icon.png"
                   class="w-50"
                   alt="Icon formed as a B for Bokvenn"
                 /><span class="mt-1">Home</span></a
@@ -59,16 +59,16 @@
               <a
                 class="nav-link active text-center w-50"
                 aria-current="page"
-                href="index.html"
+                href="/index.html"
                 >Log in</a
               >
             </li>
             <li class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase">
               <a
                 class="nav-link d-flex flex-column align-items-center"
-                href="index.html"
+                href="/index.html"
                 ><img
-                  src="images/profiles/profile-no-image.png"
+                  src="/images/profiles/profile-no-image.png"
                   class="rounded-circle small-profile-img"
                   alt="Profile image icon"
                 /><span class="mt-1">Profile</span></a
@@ -124,6 +124,18 @@
                     required
                   />
                 </div>
+                <div class="mb-4">
+                  <label for="inputAvatar" class="form-label">Password</label>
+                  <input
+                    type="url"
+                    name="avatar"
+                    class="form-control"
+                    id="inputAvatar"
+                    placeholder="Add avatar url"
+                    value="https://user-images.githubusercontent.com/96269610/221194479-4165c632-1e55-4eb8-ac91-a64a28e1be17.png"
+                    ;
+                  />
+                </div>
                 <button
                   type="submit"
                   class="btn btn-primary w-100 text-white rounded-pill"
@@ -135,7 +147,7 @@
               <div class="mt-3 text-center">
                 <p>Already a member?</p>
                 <a
-                  href="index.html"
+                  href="/profile/login/"
                   class="btn btn-secondary rounded-pill w-100"
                 >
                   Sign in
@@ -169,6 +181,6 @@
       </div>
     </footer>
 
-    <script type="module" src="js/formsregister.mjs"></script>
+    <script type="module" src="/js/index.mjs"></script>
   </body>
 </html>

@@ -1,12 +1,3 @@
-import { deletePost } from "./api/posts/deleteposts.mjs";
-import { setCreatePostForm } from "./forms/createPosts.mjs";
-import { readPost, readPosts } from "./api/posts/readposts.mjs";
-import { displayPosts } from "./html/posts/displayPost.mjs";
+import router from "./router.mjs";
 
-// posts
-
-// Create Post
-setCreatePostForm();
-
-// read posts
-displayPosts();
+router();

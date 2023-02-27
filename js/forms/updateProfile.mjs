@@ -6,10 +6,11 @@ export async function setUpdateProfileForm() {
   const form = document.querySelector("#editProfile");
   try {
     if (form) {
-      const { name, email } = loadLocal("profile");
+      const { name, email, avatar } = loadLocal("profile");
 
       form.name.value = name;
       form.email.value = email;
+      form.avatar.value = avatar;
       const profile = await readProfile(name);
       console.log(profile);
 
@@ -28,6 +29,7 @@ export async function setUpdateProfileForm() {
         profile.email = email;
 
         updateProfile(profile);
+        console.log(profile);
       });
     }
   } catch (error) {

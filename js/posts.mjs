@@ -1,3 +1,3 @@
-import * as posts from "./api/posts/index.mjs";
+// import * as posts from "./api/posts/index.mjs";
 
-posts.createPost();
+// posts.createPost();

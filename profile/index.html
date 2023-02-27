@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profile page of Bokvenn" />
+    <title>Bokvenn | Sara Donanu</title>
+     <!-- Website icon -->
+     <link
+     rel="icon"
+     type="image/svg"
+     sizes="16x16"
+     href="/images/home-icon.png"
+   />
+   <link
+     rel="icon"
+     type="image/svg"
+     sizes="32x32"
+     href="/images/home-icon.png"
+   />
+   <!-- Bootstrap stylesheet -->
+   <link
+     rel="stylesheet"
+     href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+   />
+   <link rel="stylesheet" href="/css/styles.css" />
+   <!-- Fontawsome icons script -->
+   <script
+     src="https://kit.fontawesome.com/a2324745d3.js"
+     crossorigin="anonymous"
+   ></script>
+   <script src="/js/index.mjs" type="module" defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar shadow fixed-top">
+        <div
+          class="container-fluid justify-content-between mx-md-4 mx-lg-4 mx-xl-5"
+        >
+          <a class="navbar-brand w-25" href="../home/"
+            ><img src="/images/logo.png" alt="Bokvenn logo"
+          /></a>
+          <ul class="navbar-nav nav flex-row align-items-center">
+            <li class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase">
+              <a
+                class="nav-link d-flex flex-column align-items-center"
+                href="../home/"
+                ><img
+                  src="/images/home-icon.png"
+                  class="w-50"
+                  alt="Icon formed as a B for Bokvenn"
+                /><span class="mt-1">Home</span></a
+              >
+            </li>
+            <li
+              class="nav-item text-uppercase d-flex justify-content-center mx-md-1 mx-lg-1"
+            >
+              <a class="nav-link text-center w-50" href="/index.html"
+                >Sign out</a
+              >
+            </li>
+            <li class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase">
+              <a
+                class="nav-link active d-flex flex-column align-items-center"
+                aria-current="page"
+                href="/profile.html"
+                ><img
+                  src="/images/profiles/profile5.jpg"
+                  class="rounded-circle small-profile-img"
+                  alt="Sara's profile image"
+                /><span class="mt-1">Profile</span></a
+              >
+            </li>
+            <li
+              class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase position-relative"
+            >
+              <form>
+                <a
+                  class="nav-link d-flex flex-column align-items-center position-absolute search p-0"
+                >
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <span class="mt-1">Search</span>
+                </a>
+                <input
+                  type="search"
+                  class="search-open position-relative overflow-hidden bg-transparent form-control"
+                  placeholder="search here..."
+                />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Main -->
+    <main class="mx-3 mx-sm-2 mt-5 pt-5">
+      <div class="container">
+        <div class="row justify-content-between m-xl-5">
+          <!-- About the profile -->
+          <div class="col-12 col-md-4 col-l-4 col-xl-4 text-center p-4">
+            <img
+              src="/images/profiles/profile5.jpg"
+              class="rounded-circle w-75"
+              alt="Sara's profile image"
+            />
+            <h1 class="pt-3">Sara Donanu</h1>
+            <div class="d-flex justify-content-center">
+              <p class="text-primary fw-semibold me-2">Age:</p>
+              <span>23 years</span>
+            </div>
+            <div class="d-flex justify-content-center">
+              <p class="text-primary fw-semibold me-2">From:</p>
+              <span>Switzerland</span>
+            </div>
+            <div class="d-flex justify-content-center">
+              <p class="text-primary fw-semibold me-2">Favorite genre:</p>
+              <span>Fantasy</span>
+            </div>
+            <div class="d-flex justify-content-center align-items-center mb-2">
+              <i class="fa-solid fa-book-open small-icon"></i>
+              <small class="fw-light ps-1"
+                >Reading now The Nature of Witches</small
+              >
+            </div>
+            <div class="d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-book small-icon"></i>
+              <small class="fw-light ps-1"
+                >Last finished The Blade Itself</small
+              >
+            </div>
+            <!-- Profile friends -->
+            <h2 class="mt-3">Sara's friends</h2>
+            <div
+              class="d-flex justify-content-between flex-md-wrap flex-l-wrap flex-xl-wrap"
+            >
+              <div class="d-flex flex-column align-items-center m-1">
+                <img
+                  src="/images/profiles/profile-no-image.png"
+                  class="large-profile-img"
+                  alt="Steiner's profile image"
+                />
+                <span class="mt-1 fw-light">Steiner</span>
+              </div>
+              <div class="d-flex flex-column align-items-center m-1">
+                <img
+                  src="/images/profiles/profile7.jpg"
+                  class="large-profile-img rounded-circle"
+                  alt="Clair's profile image"
+                />
+                <span class="mt-1 fw-light">Clair</span>
+              </div>
+              <div class="d-flex flex-column align-items-center m-1">
+                <img
+                  src="/images/profiles/profile8.jpg"
+                  class="large-profile-img rounded-circle"
+                  alt="Elliot's profile image"
+                />
+                <span class="mt-1 fw-light">Elliot</span>
+              </div>
+              <div class="d-flex flex-column align-items-center m-1">
+                <img
+                  src="/images/profiles/profile1.jpg"
+                  class="large-profile-img rounded-circle"
+                  alt="Alexis' profile image"
+                />
+                <span class="mt-1 fw-light">Alexis</span>
+              </div>
+            </div>
+          </div>
+          <!-- Profiles feed -->
+          <div class="col-12 col-md-7 col-l-7 col-xl-7">
+            <h2 class="mt-3">Sara's feed</h2>
+            <!-- Create post -->
+            <div class="bg-white rounded shadow p-3 my-3">
+              <div class="align-items-center">
+                <a href="/profile.html">
+                  <img
+                    src="/images/profiles/profile5.jpg"
+                    class="rounded-circle medium-profile-img"
+                    alt="Sara's profile image"
+                  />
+                </a>
+                <a href="/profile.html">Sara Donau</a>
+              </div>
+              <form class="mt-3">
+                <select
+                  class="form-select rounded"
+                  aria-label="select reading status"
+                >
+                  <option selected>Choose your reading status</option>
+                  <option value="1">Reading right now</option>
+                  <option value="2">Finished book</option>
+                  <option value="3">DNF'ed book</option>
+                  <option value="4">No reading status</option>
+                </select>
+                <textarea
+                  class="form-control rounded mt-3"
+                  placeholder="What do you want to say?"
+                ></textarea>
+                <button
+                  type="submit"
+                  class="btn btn-primary text-white mt-3 d-block w-100 rounded-pill"
+                >
+                  Post
+                </button>
+              </form>
+            </div>
+
+            <section id="posts"></section>
+        </div>
+      </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center p-4">
+            <small>
+              Share your love for books with friends and invite them to join
+              you!
+            </small>
+          </div>
+          <div class="col-12 text-center mb-3">
+            <small>Copyright 2023 bokvenn</small>
+          </div>
+          <div class="col-6 text-center pb-3">
+            <a href="#" class="text-uppercase">About bokvenn</a>
+          </div>
+          <div class="col-6 text-center">
+            <a href="#" class="text-uppercase">faq</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>

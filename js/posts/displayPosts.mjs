@@ -1,4 +1,4 @@
-import { readPosts } from "../../api/posts/readposts.mjs";
+import { readPosts } from "../api/posts/readposts.mjs";
 import { renderPostTemplates } from "../templates/post.mjs";
 
 export async function displayPosts() {
