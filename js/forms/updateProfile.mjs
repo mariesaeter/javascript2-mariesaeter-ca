@@ -1,12 +1,13 @@
 import { readProfile, updateProfile } from "../api/profiles/index.mjs";
 
-import { loadLocal } from "../storage/index.mjs";
+import { loadLocal, saveLocal } from "../storage/index.mjs";
 
 export async function setUpdateProfileForm() {
   const form = document.querySelector("#editProfile");
   try {
     if (form) {
       const { name, email, avatar } = loadLocal("profile");
+      const { age, from, genre } = loadLocal("profileInfo");
 
       form.name.value = name;
       form.email.value = email;
@@ -17,6 +18,9 @@ export async function setUpdateProfileForm() {
       // add values to form
       form.banner.value = profile.banner;
       form.avatar.value = profile.avatar;
+      form.age.value = age;
+      form.from.value = from;
+      form.genre.value = genre;
 
       form.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -24,9 +28,19 @@ export async function setUpdateProfileForm() {
         const formData = new FormData(form);
         const profile = Object.fromEntries(formData.entries());
         console.log(profile);
-
         profile.name = name;
         profile.email = email;
+
+        // Save additional information from edit form
+        const { age, from, genre } = profile;
+
+        const info = {
+          age,
+          from,
+          genre,
+        };
+
+        saveLocal("profileInfo", info);
 
         updateProfile(profile);
         console.log(profile);

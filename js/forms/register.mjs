@@ -12,6 +12,17 @@ export function setRegisterForm() {
     const user = Object.fromEntries(formData.entries());
     console.log(user);
 
+    // Save additional information from edit form
+    const { age, from, genre } = user;
+
+    const info = {
+      age,
+      from,
+      genre,
+    };
+
+    saveLocal("profileInfo", info);
+
     registerUser(user);
   });
 }

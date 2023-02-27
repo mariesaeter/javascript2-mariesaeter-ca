@@ -20,10 +20,10 @@
      href="/images/home-icon.png"
    />
    <!-- Bootstrap stylesheet -->
-   <link
+   <!-- <link
      rel="stylesheet"
      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
-   />
+   /> -->
    <link rel="stylesheet" href="/css/styles.css" />
    <!-- Fontawsome icons script -->
    <script
@@ -99,23 +99,8 @@
         <div class="row justify-content-between m-xl-5">
           <!-- About the profile -->
           <div class="col-12 col-md-4 col-l-4 col-xl-4 text-center p-4">
-            <img
-              src="/images/profiles/profile5.jpg"
-              class="rounded-circle w-75"
-              alt="Sara's profile image"
-            />
-            <h1 class="pt-3">Sara Donanu</h1>
-            <div class="d-flex justify-content-center">
-              <p class="text-primary fw-semibold me-2">Age:</p>
-              <span>23 years</span>
-            </div>
-            <div class="d-flex justify-content-center">
-              <p class="text-primary fw-semibold me-2">From:</p>
-              <span>Switzerland</span>
-            </div>
-            <div class="d-flex justify-content-center">
-              <p class="text-primary fw-semibold me-2">Favorite genre:</p>
-              <span>Fantasy</span>
+            <div id="profileInfoContainer">
+           <!-- Profile information is inserted from js here -->
             </div>
             <div class="d-flex justify-content-center align-items-center mb-2">
               <i class="fa-solid fa-book-open small-icon"></i>
@@ -129,6 +114,7 @@
                 >Last finished The Blade Itself</small
               >
             </div>
+            
             <!-- Profile friends -->
             <h2 class="mt-3">Sara's friends</h2>
             <div
@@ -183,7 +169,7 @@
                 </a>
                 <a href="/profile.html">Sara Donau</a>
               </div>
-              <form class="mt-3">
+              <form class="mt-3" id="createPostForm">
                 <select
                   class="form-select rounded"
                   aria-label="select reading status"

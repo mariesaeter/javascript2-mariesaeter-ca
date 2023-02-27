@@ -1,5 +1,6 @@
 import * as listeners from "./forms/index.mjs";
 import { displayPosts } from "./posts/displayPosts.mjs";
+import { displayProfile } from "./profile/index.mjs";
 
 export default function router() {
   const path = location.pathname;
@@ -17,6 +18,7 @@ export default function router() {
       break;
     case "/profile/":
       listeners.setCreatePostForm();
+      displayProfile();
     // display posts for that user
     case "/home/":
       listeners.setCreatePostForm();
