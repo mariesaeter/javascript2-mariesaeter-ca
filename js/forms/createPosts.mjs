@@ -1,4 +1,5 @@
 import { createPost } from "../api/posts/createposts.mjs";
+import { displayAvatar } from "../post/displayAvatar.mjs";
 
 export function setCreatePostForm() {
   const form = document.querySelector("#createPostForm");
