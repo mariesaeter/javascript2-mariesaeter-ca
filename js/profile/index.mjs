@@ -3,7 +3,10 @@ import { loadLocal } from "../storage/index.mjs";
 import { renderProfileTemplate } from "../templates/profile.mjs";
 
 export async function displayProfile() {
-  const profile = loadLocal("profile");
+  const url = new URL(location.href);
+  const name = url.searchParams.get("name");
+
+  const profile = await readProfile(name);
   const profileInfo = loadLocal("profileInfo");
 
   const profileSection = document.getElementById("profileInfoContainer");

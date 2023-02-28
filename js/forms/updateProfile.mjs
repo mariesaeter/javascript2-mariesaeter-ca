@@ -44,6 +44,7 @@ export async function setUpdateProfileForm() {
 
         updateProfile(profile);
         console.log(profile);
+        saveLocal("profile", profile);
       });
     }
   } catch (error) {
