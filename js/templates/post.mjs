@@ -1,3 +1,5 @@
+import { readPost } from "../api/posts/readposts.mjs";
+
 export function postTemplate(postData) {
   // HTML post structure
   // //// End result
@@ -88,7 +90,7 @@ export function postTemplate(postData) {
   commentLink.appendChild(commentLinkText);
   linkChildDivOne.append(likeLink, commentLink);
 
-  //   if () {
+  //
   const linkChildDivTwo = document.createElement("div");
   const updateLink = document.createElement("a");
   updateLink.setAttribute("href", `/post/edit/?id=${postData.id}`);
@@ -103,9 +105,9 @@ export function postTemplate(postData) {
 
   linkChildDivTwo.append(updateLink, deleteLink);
   childDivTwo.append(linkChildDivOne, linkChildDivTwo);
-  // } else {
+  //
   childDivTwo.appendChild(linkChildDivOne);
-  // }
+  //
 
   thirdChildDivOne.append(userName, postDateContainer);
   thirdChildDivTwo.appendChild(postTitleContainer);
@@ -123,11 +125,18 @@ export function renderPostTemplate(postData, parent) {
 }
 
 export function renderPostTemplates(postData, parent) {
-  postData.every((postData, index) => {
-    if (index > 20) {
-      return false;
-    }
-    parent.append(postTemplate(postData));
-    return true;
-  });
+  if (postData.array > 20) {
+    postData.every((postData, index) => {
+      if (index > 20) {
+        return false;
+      }
+      parent.append(postTemplate(postData));
+      return true;
+    });
+  } else {
+    postData.every((postData) => {
+      parent.append(postTemplate(postData));
+      return true;
+    });
+  }
 }

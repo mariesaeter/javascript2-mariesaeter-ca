@@ -1,9 +1,21 @@
 import { api_posts } from "../../url/constants.mjs";
+import { api_profile } from "../../url/constants.mjs";
 import { tokenFetch } from "../tokenFetch.mjs";
 
 export async function readPosts() {
   try {
     const response = await tokenFetch(api_posts);
+
+    const posts = await response.json();
+    return posts;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function readPostsProfile(name) {
+  try {
+    const response = await tokenFetch(`${api_profile}/${name}/posts`);
 
     const posts = await response.json();
     return posts;
