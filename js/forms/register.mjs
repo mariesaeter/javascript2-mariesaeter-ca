@@ -12,6 +12,11 @@ export function setRegisterForm() {
     const user = Object.fromEntries(formData.entries());
     console.log(user);
 
+    if (user.avatar === null) {
+      user.avatar.value =
+        "https://user-images.githubusercontent.com/96269610/221194479-4165c632-1e55-4eb8-ac91-a64a28e1be17.png";
+    }
+
     // Save additional information from edit form
     const { age, from, genre } = user;
 

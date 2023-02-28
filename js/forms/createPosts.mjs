@@ -3,6 +3,7 @@ import { displayAvatar } from "../post/displayAvatar.mjs";
 
 export function setCreatePostForm() {
   const form = document.querySelector("#createPostForm");
+  displayAvatar();
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();

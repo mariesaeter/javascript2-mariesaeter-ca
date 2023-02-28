@@ -1,8 +1,10 @@
 import { readPost } from "../api/posts/readposts.mjs";
 import { updatePost } from "../api/posts/updateposts.mjs";
+import { displayAvatar } from "../post/displayAvatar.mjs";
 
 export async function setUpdatePostForm() {
   const form = document.querySelector("#updatePostForm");
+  displayAvatar();
 
   const url = new URL(location.href);
   const id = url.searchParams.get("id");
