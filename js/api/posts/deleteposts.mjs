@@ -9,6 +9,10 @@ export async function deletePost(id) {
     const response = await tokenFetch(deletePostUrl, {
       method,
     });
+    console.log("delete success");
+    setTimeout(() => {
+      location.reload();
+    }, 300);
 
     return await response.json();
   } catch (error) {

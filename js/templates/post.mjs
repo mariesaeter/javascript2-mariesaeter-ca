@@ -1,3 +1,4 @@
+import { deletePost } from "../api/posts/deleteposts.mjs";
 import { readPost } from "../api/posts/readposts.mjs";
 
 // access author properties
@@ -93,12 +94,11 @@ export function postTemplate(postData) {
   // childDivTwo links
 
   const linkChildDivOne = document.createElement("div");
-  const likeLink = document.createElement("a");
-  likeLink.setAttribute("href", "#");
+  const likeLink = document.createElement("button");
+  likeLink.className = "btn btn-link";
   const likeLinkText = document.createTextNode("like");
-  const commentLink = document.createElement("a");
-  commentLink.setAttribute("href", "#");
-  commentLink.className = "ms-3";
+  const commentLink = document.createElement("button");
+  commentLink.className = "ms-3 btn btn-link";
   const commentLinkText = document.createTextNode("commment");
 
   likeLink.appendChild(likeLinkText);
@@ -107,13 +107,20 @@ export function postTemplate(postData) {
 
   //
   const linkChildDivTwo = document.createElement("div");
-  const updateLink = document.createElement("a");
-  updateLink.setAttribute("href", `/post/edit/?id=${postData.id}`);
+  const updateLink = document.createElement("button");
+  updateLink.className = "btn btn-link";
   const updateLinkText = document.createTextNode("update");
-  const deleteLink = document.createElement("a");
-  deleteLink.setAttribute("href", "#");
-  deleteLink.className = "ms-3";
+  // action to send to update post page
+  updateLink.addEventListener("click", () => {
+    window.location = `/post/edit/?id=${postData.id}`;
+  });
+
+  const deleteLink = document.createElement("button");
+  deleteLink.className = "ms-3 btn btn-link";
   const deleteLinkText = document.createTextNode("delete");
+  deleteLink.addEventListener("click", () => {
+    deletePost(postData.id);
+  });
 
   updateLink.appendChild(updateLinkText);
   deleteLink.appendChild(deleteLinkText);
