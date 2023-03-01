@@ -35,6 +35,9 @@ export async function setUpdatePostForm() {
       post.title = [post.selectTitle + ": " + post.bookTitle].join("");
 
       updatePost(post);
+      setTimeout(() => {
+        history.back();
+      }, 500);
     });
   }
 }
