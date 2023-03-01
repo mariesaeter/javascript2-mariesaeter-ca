@@ -7,6 +7,7 @@ export async function readPosts() {
     const response = await tokenFetch(api_posts);
 
     const posts = await response.json();
+
     return posts;
   } catch (error) {
     console.log(error);
@@ -15,9 +16,12 @@ export async function readPosts() {
 
 export async function readPostsProfile(name) {
   try {
-    const response = await tokenFetch(`${api_profile}/${name}/posts`);
+    const response = await tokenFetch(
+      `${api_profile}/${name}/posts/?_author=true`
+    );
 
     const posts = await response.json();
+
     return posts;
   } catch (error) {
     console.log(error);

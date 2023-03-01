@@ -1,5 +1,12 @@
 import { readPost } from "../api/posts/readposts.mjs";
 
+// access author properties
+// export function getAuthor(authorData) {
+//   for (let i = 0; i < authorData.length; i++) {
+//     return authorData[i].author;
+//   }
+// }
+
 export function postTemplate(postData) {
   // HTML post structure
   // //// End result
@@ -38,8 +45,14 @@ export function postTemplate(postData) {
   const childDivOne = document.createElement("div");
   childDivOne.className = "d-flex";
 
-  const userAvatar = document.createElement("a");
-  userAvatar.setAttribute("href", "#");
+  // create avatar image
+
+  const avatar = document.createElement("img");
+  avatar.className = "rounded-circle medium-profile-img";
+  // avatar.setAttribute("alt", `${postData.author.name}'s profile image`);
+  avatar.src = `${postData.author.avatar}`;
+
+  // create h1
 
   // child of childDivOne, parent of thirdChildDivOne
   const secondChildDivOne = document.createElement("div");
@@ -48,8 +61,10 @@ export function postTemplate(postData) {
   const thirdChildDivOne = document.createElement("div");
   thirdChildDivOne.className = "d-flex justify-content-between";
 
-  const userName = document.createElement("a");
-  userName.setAttribute("href", "#");
+  const profileName = document.createElement("a");
+  profileName.innerText = `${postData.author.name}`;
+
+  profileName.setAttribute("href", `/../profile/?name=${postData.author.name}`);
 
   const postDateContainer = document.createElement("small");
   postDateContainer.className = "fw-light";
@@ -109,10 +124,10 @@ export function postTemplate(postData) {
   childDivTwo.appendChild(linkChildDivOne);
   //
 
-  thirdChildDivOne.append(userName, postDateContainer);
+  thirdChildDivOne.append(profileName, postDateContainer);
   thirdChildDivTwo.appendChild(postTitleContainer);
   secondChildDivOne.append(thirdChildDivOne, thirdChildDivTwo);
-  childDivOne.append(userAvatar, secondChildDivOne);
+  childDivOne.append(avatar, secondChildDivOne);
 
   // add everything to the main div
   mainDiv.append(childDivOne, bodyContainer, childDivTwo);
@@ -125,18 +140,52 @@ export function renderPostTemplate(postData, parent) {
 }
 
 export function renderPostTemplates(postData, parent) {
-  if (postData.array > 20) {
-    postData.every((postData, index) => {
-      if (index > 20) {
-        return false;
-      }
-      parent.append(postTemplate(postData));
-      return true;
-    });
-  } else {
-    postData.every((postData) => {
-      parent.append(postTemplate(postData));
-      return true;
-    });
-  }
+  postData.every((postData, index) => {
+    if (index > 20) {
+      return false;
+    }
+    parent.append(postTemplate(postData));
+    return true;
+  });
+
+  // for (let i = 0; i < postData.length; i++) {
+  //   parent.append(postTemplate(postData));
+  //   if (i === 20) {
+  //     break;
+  //   }
 }
+
+// postData.forEach(element, index => {
+//   parent.append(postTemplate(element));
+//   if(index > 20) {
+//     break;
+//   }
+// });
+// postData.every((index) => {
+//   if (index > 20) {
+//     return false;
+//   } else {
+//     parent.append(postTemplate(postData));
+//     return true;
+//   }
+// });
+
+//     parent.append(postTemplate(postData));
+//     return true;
+//   });
+// }
+
+// if (postData.array < 20) {
+//   postData.every((postData) => {
+//     parent.append(postTemplate(postData));
+//     return true;
+//   });
+// } else {
+//   postData.every((postData, index) => {
+//     if (index > 20) {
+//       return false;
+//     }
+//     parent.append(postTemplate(postData));
+//     return true;
+//   });
+// }

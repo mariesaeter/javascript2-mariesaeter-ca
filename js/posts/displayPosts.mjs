@@ -3,6 +3,7 @@ import { renderPostTemplates } from "../templates/post.mjs";
 
 export async function displayPosts() {
   const posts = await readPosts();
+  // const author = getAuthor(posts);
 
   const postSection = document.getElementById("posts");
 
