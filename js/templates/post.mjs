@@ -1,6 +1,6 @@
 import { deletePost } from "../api/posts/deleteposts.mjs";
 import { readPost } from "../api/posts/readposts.mjs";
-
+import { loadLocal } from "../storage/index.mjs";
 // access author properties
 // export function getAuthor(authorData) {
 //   for (let i = 0; i < authorData.length; i++) {
@@ -105,30 +105,35 @@ export function postTemplate(postData) {
   commentLink.appendChild(commentLinkText);
   linkChildDivOne.append(likeLink, commentLink);
 
-  //
-  const linkChildDivTwo = document.createElement("div");
-  const updateLink = document.createElement("button");
-  updateLink.className = "btn btn-link";
-  const updateLinkText = document.createTextNode("update");
-  // action to send to update post page
-  updateLink.addEventListener("click", () => {
-    window.location = `/post/edit/?id=${postData.id}`;
-  });
+  // only show delete and update for the person who has created the post ( write it more simple? )
+  const profile = loadLocal("profile");
 
-  const deleteLink = document.createElement("button");
-  deleteLink.className = "ms-3 btn btn-link";
-  const deleteLinkText = document.createTextNode("delete");
-  deleteLink.addEventListener("click", () => {
-    deletePost(postData.id);
-  });
+  if (postData.author.name === profile.name) {
+    const linkChildDivTwo = document.createElement("div");
+    const updateLink = document.createElement("button");
+    updateLink.className = "btn btn-link";
+    const updateLinkText = document.createTextNode("update");
+    // action to send to update post page
+    updateLink.addEventListener("click", () => {
+      window.location = `/post/edit/?id=${postData.id}`;
+    });
 
-  updateLink.appendChild(updateLinkText);
-  deleteLink.appendChild(deleteLinkText);
+    const deleteLink = document.createElement("button");
+    deleteLink.className = "ms-3 btn btn-link";
+    const deleteLinkText = document.createTextNode("delete");
+    deleteLink.addEventListener("click", () => {
+      deletePost(postData.id);
+    });
 
-  linkChildDivTwo.append(updateLink, deleteLink);
-  childDivTwo.append(linkChildDivOne, linkChildDivTwo);
-  //
-  childDivTwo.appendChild(linkChildDivOne);
+    updateLink.appendChild(updateLinkText);
+    deleteLink.appendChild(deleteLinkText);
+
+    linkChildDivTwo.append(updateLink, deleteLink);
+    childDivTwo.append(linkChildDivOne, linkChildDivTwo);
+  } else {
+    childDivTwo.appendChild(linkChildDivOne);
+  }
+
   //
 
   thirdChildDivOne.append(profileName, postDateContainer);
