@@ -4,7 +4,7 @@ import { tokenFetch } from "../tokenFetch.mjs";
 
 export async function readPosts() {
   try {
-    const response = await tokenFetch(api_posts);
+    const response = await tokenFetch(`${api_posts}/?_author=true`);
 
     const posts = await response.json();
 
@@ -30,7 +30,7 @@ export async function readPostsProfile(name) {
 
 export async function readPost(id) {
   try {
-    const response = await tokenFetch(`${api_posts}/${id}`);
+    const response = await tokenFetch(`${api_posts}/${id}/?_author=true`);
 
     const post = await response.json();
     return post;
