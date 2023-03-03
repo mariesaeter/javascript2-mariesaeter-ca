@@ -1,6 +1,6 @@
 import * as listeners from "./forms/index.mjs";
 import { displayPosts, displayPostsProfile } from "./posts/displayPosts.mjs";
-import { displayProfile } from "./profile/index.mjs";
+import { displayProfile } from "./profile/display.mjs";
 
 export default function router() {
   const path = location.pathname;
