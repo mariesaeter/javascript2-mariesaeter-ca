@@ -1,6 +1,7 @@
 import { deletePost } from "../api/posts/deleteposts.mjs";
 import { readPost } from "../api/posts/readposts.mjs";
 import { loadLocal } from "../storage/index.mjs";
+import { formatDate } from "../tools/dateFormat.mjs";
 // access author properties
 // export function getAuthor(authorData) {
 //   for (let i = 0; i < authorData.length; i++) {
@@ -70,7 +71,7 @@ export function postTemplate(postData) {
   const postDateContainer = document.createElement("small");
   postDateContainer.className = "fw-light";
 
-  postDateContainer.innerText = `${postData.date}`;
+  postDateContainer.innerText = `${formatDate(postData.created)}`;
 
   const thirdChildDivTwo = document.createElement("div");
   thirdChildDivTwo.className = "d-flex align-items-center";
