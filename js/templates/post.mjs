@@ -159,13 +159,24 @@ export function renderPostTemplates(postData, parent) {
     parent.append(postTemplate(postData));
     return true;
   });
-
-  // for (let i = 0; i < postData.length; i++) {
-  //   parent.append(postTemplate(postData));
-  //   if (i === 20) {
-  //     break;
-  //   }
 }
+export function renderAllPostsTemplate(postData, parent) {
+  postData.forEach((postData) => {
+    parent.append(postTemplate(postData));
+  });
+}
+
+// export function renderSearchPosts(postData, parent) {
+//   const searchPosts = postData.map((postData) => postTemplate(postData));
+//   parent.innerHTML = "";
+//   parent.append(postTemplate(searchPosts));
+// }
+
+// for (let i = 0; i < postData.length; i++) {
+//   parent.append(postTemplate(postData));
+//   if (i === 20) {
+//     break;
+//   }
 
 // postData.forEach(element, index => {
 //   parent.append(postTemplate(element));
