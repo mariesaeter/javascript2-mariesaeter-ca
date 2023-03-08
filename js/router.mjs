@@ -1,3 +1,4 @@
+import { filterResults } from "./api/filter/index.mjs";
 import { searchResults } from "./api/search/index.mjs";
 import * as listeners from "./forms/index.mjs";
 import { setSearchForm } from "./forms/index.mjs";
@@ -30,6 +31,7 @@ export default function router() {
       listeners.setCreatePostForm();
       displayPosts();
       searchResults();
+      filterResults();
       break;
 
     case "/post/edit/":
