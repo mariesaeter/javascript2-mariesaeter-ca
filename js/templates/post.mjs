@@ -2,6 +2,7 @@ import { deletePost } from "../api/posts/deleteposts.mjs";
 import { readPost } from "../api/posts/readposts.mjs";
 import { loadLocal } from "../storage/index.mjs";
 import { formatDate } from "../tools/dateFormat.mjs";
+import { noAvatar } from "../tools/noAvatar.mjs";
 // access author properties
 // export function getAuthor(authorData) {
 //   for (let i = 0; i < authorData.length; i++) {
@@ -53,6 +54,7 @@ export function postTemplate(postData) {
   avatar.className = "rounded-circle medium-profile-img";
   // avatar.setAttribute("alt", `${postData.author.name}'s profile image`);
   avatar.src = `${postData.author.avatar}`;
+  noAvatar(postData.author.avatar, avatar);
 
   // create h1
 

@@ -22,21 +22,26 @@
 
 export function avatarTemplate(profileData) {
   const avatarDiv = document.createElement("div");
+  const { avatar, name } = profileData;
 
   // create avatar image
 
-  const avatar = document.createElement("img");
-  avatar.className = "rounded-circle medium-profile-img";
-  avatar.setAttribute("alt", `${profileData.name}'s profile image`);
-  avatar.src = `${profileData.avatar}`;
+  const avatarImg = document.createElement("img");
+  avatarImg.className = "rounded-circle medium-profile-img";
+  // avatarImg.setAttribute("alt", `${name}'s profile image`);
+  avatarImg.src = `${avatar}`;
+
+  if (avatar === "") {
+    avatarImg.src = "/../images/profiles/profile-no-image.png";
+  }
 
   // create h1
   const profileName = document.createElement("a");
-  profileName.innerText = `${profileData.name}`;
+  profileName.innerText = `${name}`;
 
-  profileName.setAttribute("href", `/../profile/?name=${profileData.name}`);
+  profileName.setAttribute("href", `/../profile/?name=${name}`);
 
-  avatarDiv.append(avatar, profileName);
+  avatarDiv.append(avatarImg, profileName);
 
   return avatarDiv;
 }

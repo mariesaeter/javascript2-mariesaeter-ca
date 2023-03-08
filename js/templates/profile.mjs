@@ -1,5 +1,7 @@
 // avatar
 
+import { noAvatar } from "../tools/noAvatar.mjs";
+
 export function profileTemplate(profileData, infoData) {
   const mainDiv = document.createElement("div");
 
@@ -13,6 +15,7 @@ export function profileTemplate(profileData, infoData) {
     "rounded-circle w-75 h-75 position-absolute top-50 start-50 translate-middle object-fit-cover";
   avatar.setAttribute("alt", `${profileData.name}'s profile image`);
   avatar.src = `${profileData.avatar}`;
+  noAvatar(profileData.avatar, avatar);
 
   avatarContainer.appendChild(avatar);
   // create h1
