@@ -1,6 +1,11 @@
 import { methodPost as method } from "../url/constants.mjs";
 import { api_register } from "../url/constants.mjs";
 
+/**
+ * Register new user
+ * @param {Object} user - Data entries from "../forms/register.mjs"
+ * @returns
+ */
 export async function registerUser(user) {
   const body = JSON.stringify(user);
 
@@ -14,7 +19,6 @@ export async function registerUser(user) {
     });
 
     const json = await response.json();
-    console.log(json);
 
     return json;
   } catch (error) {

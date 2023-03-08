@@ -1,5 +1,4 @@
-{
-  /* <div class="d-flex">
+/* <div class="d-flex">
 <a href="/profile.html">
   <img
     src="/images/profiles/profile5.jpg"
@@ -18,8 +17,12 @@
   </div>
 </div>
 </div> */
-}
 
+/**
+ * Creates template for the name and avatar for the logged in user
+ * @param {Object} profileData
+ * @returns - div with name and avatar
+ */
 export function avatarTemplate(profileData) {
   const avatarDiv = document.createElement("div");
   const { avatar, name } = profileData;
@@ -46,6 +49,11 @@ export function avatarTemplate(profileData) {
   return avatarDiv;
 }
 
+/**
+ * Render template for logged in profile avatar and name and appends to html container
+ * @param {Object} profileData
+ * @param {Object} parent - html container
+ */
 export function renderAvatarTemplate(profileData, parent) {
   parent.append(avatarTemplate(profileData));
 }

@@ -3,6 +3,10 @@
 // import { methodPost as method } from "./main.mjs";
 import { registerUser } from "../api/register.mjs";
 
+/**
+ * Retrieves data from HTML form
+ * User is registered in through signInUser()
+ */
 export function setRegisterForm() {
   const form = document.querySelector("#register-form");
   form.addEventListener("submit", (event) => {

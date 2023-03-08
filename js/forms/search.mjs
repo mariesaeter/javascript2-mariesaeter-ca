@@ -1,5 +1,10 @@
 import { renderAllPostsTemplate } from "../templates/post.mjs";
 
+/**
+ * Displays posts filtered by search input
+ * @param {Array} posts
+ * @returns - new array of filtered posts
+ */
 export function setSearchForm(posts) {
   const form = document.querySelector("#searchForm");
 

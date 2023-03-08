@@ -2,6 +2,12 @@
 
 import { noAvatar } from "../tools/noAvatar.mjs";
 
+/**
+ * Creates template for profile html
+ * @param {Object} profileData - user information from api
+ * @param {Object} infoData - additional information from local storage
+ * @returns div with html
+ */
 export function profileTemplate(profileData, infoData) {
   const mainDiv = document.createElement("div");
 
@@ -76,6 +82,12 @@ export function profileTemplate(profileData, infoData) {
   return mainDiv;
 }
 
+/**
+ * Render template forprofile and appends to html container
+ * @param {Object} profileData - user information from api
+ * @param {Object} infoData - additional information from local storage
+ * @param {Object} parent - html container
+ */
 export function renderProfileTemplate(profileData, infoData, parent) {
   parent.append(profileTemplate(profileData, infoData));
 }

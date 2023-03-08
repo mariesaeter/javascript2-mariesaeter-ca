@@ -1,15 +1,20 @@
 import { readPosts, readPostsProfile } from "../api/posts/readposts.mjs";
 import { renderPostTemplates } from "../templates/post.mjs";
 
+/**
+ * Handler to display posts in HTML
+ */
 export async function displayPosts() {
   const posts = await readPosts();
-  // const author = getAuthor(posts);
 
   const postSection = document.getElementById("posts");
 
   renderPostTemplates(posts, postSection);
 }
 
+/**
+ * Handler to display posts by the selected profile in HTML
+ */
 export async function displayPostsProfile() {
   const url = new URL(location.href);
   const name = url.searchParams.get("name");

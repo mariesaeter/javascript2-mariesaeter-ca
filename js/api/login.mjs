@@ -2,6 +2,11 @@ import { methodPost as method } from "../url/constants.mjs";
 import { api_login } from "../url/constants.mjs";
 import * as storage from "../storage/index.mjs";
 
+/**
+ * Sign in existing user
+ * @param {Object} user - Data entries from "../forms/login.mjs"
+ * On success - redirect to profile page
+ */
 export async function signInUser(user) {
   const body = JSON.stringify(user);
 
@@ -22,7 +27,7 @@ export async function signInUser(user) {
     storage.saveLocal("profile", profile);
 
     // send user to profile page
-    window.location = "/../profile/";
+    window.location = `/../profile/?name=${profile.name}`;
   } catch (error) {
     console.log(error);
   }

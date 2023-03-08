@@ -10,6 +10,11 @@ import { noAvatar } from "../tools/noAvatar.mjs";
 //   }
 // }
 
+/**
+ *
+ * @param {Object} postData - from api
+ * @returns - html template
+ */
 export function postTemplate(postData) {
   // HTML post structure
   // //// End result
@@ -102,7 +107,7 @@ export function postTemplate(postData) {
   const likeLinkText = document.createTextNode("like");
   const commentLink = document.createElement("button");
   commentLink.className = "ms-3 btn btn-link";
-  const commentLinkText = document.createTextNode("commment");
+  const commentLinkText = document.createTextNode("comment");
 
   likeLink.appendChild(likeLinkText);
   commentLink.appendChild(commentLinkText);
@@ -150,10 +155,20 @@ export function postTemplate(postData) {
   return mainDiv;
 }
 
+/**
+ * Render template for a singular post and appends to html container
+ * @param {Object} postData - post data from api
+ * @param {Object} parent - html container
+ */
 export function renderPostTemplate(postData, parent) {
   parent.append(postTemplate(postData));
 }
 
+/**
+ * Render template for 21 post and appends to html container
+ * @param {Object} postData - post data from api
+ * @param {Object} parent - html container
+ */
 export function renderPostTemplates(postData, parent) {
   postData.every((postData, index) => {
     if (index > 20) {
@@ -163,55 +178,13 @@ export function renderPostTemplates(postData, parent) {
     return true;
   });
 }
+/**
+ * Render template for all posts and appends to html container
+ * @param {Object} postData
+ * @param {Object} parent
+ */
 export function renderAllPostsTemplate(postData, parent) {
   postData.forEach((postData) => {
     parent.append(postTemplate(postData));
   });
 }
-
-// export function renderSearchPosts(postData, parent) {
-//   const searchPosts = postData.map((postData) => postTemplate(postData));
-//   parent.innerHTML = "";
-//   parent.append(postTemplate(searchPosts));
-// }
-
-// for (let i = 0; i < postData.length; i++) {
-//   parent.append(postTemplate(postData));
-//   if (i === 20) {
-//     break;
-//   }
-
-// postData.forEach(element, index => {
-//   parent.append(postTemplate(element));
-//   if(index > 20) {
-//     break;
-//   }
-// });
-// postData.every((index) => {
-//   if (index > 20) {
-//     return false;
-//   } else {
-//     parent.append(postTemplate(postData));
-//     return true;
-//   }
-// });
-
-//     parent.append(postTemplate(postData));
-//     return true;
-//   });
-// }
-
-// if (postData.array < 20) {
-//   postData.every((postData) => {
-//     parent.append(postTemplate(postData));
-//     return true;
-//   });
-// } else {
-//   postData.every((postData, index) => {
-//     if (index > 20) {
-//       return false;
-//     }
-//     parent.append(postTemplate(postData));
-//     return true;
-//   });
-// }

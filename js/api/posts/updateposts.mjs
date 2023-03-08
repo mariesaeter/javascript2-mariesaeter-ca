@@ -2,6 +2,11 @@ import { api_posts } from "../../url/constants.mjs";
 import { methodPut as method } from "../../url/constants.mjs";
 import { tokenFetch } from "../tokenFetch.mjs";
 
+/**
+ * PUT request to update a post
+ * @param {Object} postData - Data gathered from form entries "/../js/forms/updatePost.mjs"
+ * @returns - updated post
+ */
 export async function updatePost(postData) {
   const body = JSON.stringify(postData);
   const updatePostUrl = `${api_posts}/${postData.id}`;

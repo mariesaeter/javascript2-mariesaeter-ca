@@ -4,6 +4,10 @@ import { api_Url_Base } from "../url/constants.mjs";
 import { pathProfile as path } from "../url/constants.mjs";
 import { signInUser } from "../api/login.mjs";
 
+/**
+ * Retrieves data from HTML form
+ * User is signed in through signInUser()
+ */
 export function setLoginForm() {
   const form = document.querySelector("#loginForm");
 

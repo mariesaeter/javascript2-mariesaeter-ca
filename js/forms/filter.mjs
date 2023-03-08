@@ -2,6 +2,11 @@ import { renderAllPostsTemplate } from "../templates/post.mjs";
 import { formatDateFilter } from "../tools/dateFormat.mjs";
 import { reloadPage } from "../tools/location/reload.mjs";
 
+/**
+ * Filters posts by date
+ * @param {Array} posts
+ * @returns a list of posts that matches filter input
+ */
 export function setFilterForm(posts) {
   const input = document.querySelector("#date");
   const button = document.querySelector("#clearFilter");

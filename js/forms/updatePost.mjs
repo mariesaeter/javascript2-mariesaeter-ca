@@ -2,6 +2,10 @@ import { readPost } from "../api/posts/readposts.mjs";
 import { updatePost } from "../api/posts/updateposts.mjs";
 import { displayAvatar } from "../post/displayAvatar.mjs";
 
+/**
+ * Selects post by id, adds current values to the form
+ * Puts new values to api through updatePost()
+ */
 export async function setUpdatePostForm() {
   const form = document.querySelector("#updatePostForm");
   displayAvatar();

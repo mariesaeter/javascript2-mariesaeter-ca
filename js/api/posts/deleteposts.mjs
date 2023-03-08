@@ -2,6 +2,11 @@ import { api_posts } from "../../url/constants.mjs";
 import { methodDelete as method } from "../../url/constants.mjs";
 import { tokenFetch } from "../tokenFetch.mjs";
 
+/**
+ *
+ * @param {number} id - of post
+ * @returns - none (post deleted from api)
+ */
 export async function deletePost(id) {
   const deletePostUrl = `${api_posts}/${id}`;
 
@@ -9,7 +14,7 @@ export async function deletePost(id) {
     const response = await tokenFetch(deletePostUrl, {
       method,
     });
-    console.log("delete success");
+
     setTimeout(() => {
       location.reload();
     }, 300);

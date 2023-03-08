@@ -1,6 +1,10 @@
 import { createPost } from "../api/posts/createposts.mjs";
 import { displayAvatar } from "../post/displayAvatar.mjs";
 
+/**
+ * Retrieves data from html form
+ * Creates post throguht createPost()
+ */
 export function setCreatePostForm() {
   const form = document.querySelector("#createPostForm");
   displayAvatar();

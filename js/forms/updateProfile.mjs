@@ -2,6 +2,10 @@ import { readProfile, updateProfile } from "../api/profiles/index.mjs";
 
 import { loadLocal, saveLocal } from "../storage/index.mjs";
 
+/**
+ * Selects current profile throguh local storage, adds current values to the form
+ * Puts new values to api through updateProfile() and saves new values to local storage
+ */
 export async function setUpdateProfileForm() {
   const form = document.querySelector("#editProfile");
   try {
