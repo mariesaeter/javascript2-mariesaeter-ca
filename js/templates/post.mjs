@@ -108,10 +108,18 @@ export function postTemplate(postData) {
   const commentLink = document.createElement("button");
   commentLink.className = "ms-3 btn btn-link";
   const commentLinkText = document.createTextNode("comment");
+  const viewLink = document.createElement("button");
+  viewLink.className = "ms-3 btn btn-link";
+  const viewLinkText = document.createTextNode("view post");
+  // action to send to single post page
+  viewLink.addEventListener("click", () => {
+    window.location = `/post/?id=${postData.id}`;
+  });
 
   likeLink.appendChild(likeLinkText);
   commentLink.appendChild(commentLinkText);
-  linkChildDivOne.append(likeLink, commentLink);
+  viewLink.appendChild(viewLinkText);
+  linkChildDivOne.append(likeLink, commentLink, viewLink);
 
   // only show delete and update for the person who has created the post ( write it more simple? )
   const profile = loadLocal("profile");

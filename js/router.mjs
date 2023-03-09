@@ -1,6 +1,7 @@
 import { filterResults } from "./api/filter/index.mjs";
 import { searchResults } from "./api/search/index.mjs";
 import * as listeners from "./forms/index.mjs";
+import { displayPost } from "./post/displaypost.mjs";
 import { displayPosts, displayPostsProfile } from "./posts/displayPosts.mjs";
 import { displayProfile } from "./profile/display.mjs";
 
@@ -36,5 +37,8 @@ export default function router() {
     case "/post/edit/":
       listeners.setUpdatePostForm();
       break;
+
+    case "/post/":
+      displayPost();
   }
 }
