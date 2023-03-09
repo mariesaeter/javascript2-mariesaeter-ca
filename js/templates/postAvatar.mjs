@@ -49,6 +49,44 @@ export function avatarTemplate(profileData) {
   return avatarDiv;
 }
 
+{
+  /* <a
+                class="nav-link d-flex flex-column align-items-center"
+                href="/profile/"
+                ><div id="profileImg"></div><span class="mt-1">Profile</span></a
+              > */
+}
+
+/**
+ * Creates template for the name and avatar for the logged in user
+ * @param {Object} profileData
+ * @returns - div with name and avatar
+ */
+export function navProfileImgTemplate(profileData) {
+  const { avatar, name } = profileData;
+
+  const avatarContainer = document.createElement("a");
+  avatarContainer.className = "nav-link d-flex flex-column align-items-center";
+  avatarContainer.setAttribute("href", `/../profile/?name=${name}`);
+  // create avatar image
+
+  const avatarImg = document.createElement("img");
+  avatarImg.className = "rounded-circle small-profile-img";
+  // avatarImg.setAttribute("alt", `${name}'s profile image`);
+  avatarImg.src = `${avatar}`;
+
+  if (avatar === "") {
+    avatarImg.src = "/../images/profiles/profile-no-image.png";
+  }
+
+  const profileText = document.createElement("span");
+  profileText.innerText = "profile";
+
+  avatarContainer.append(avatarImg, profileText);
+
+  return avatarContainer;
+}
+
 /**
  * Render template for logged in profile avatar and name and appends to html container
  * @param {Object} profileData
@@ -56,4 +94,13 @@ export function avatarTemplate(profileData) {
  */
 export function renderAvatarTemplate(profileData, parent) {
   parent.append(avatarTemplate(profileData));
+}
+
+/**
+ * Render template for logged in profile avatar and appends to html container
+ * @param {Object} profileAvatar
+ * @param {Object} parent - html container
+ */
+export function renderNavProfileImgTemplate(profileAvatar, parent) {
+  parent.append(navProfileImgTemplate(profileAvatar));
 }

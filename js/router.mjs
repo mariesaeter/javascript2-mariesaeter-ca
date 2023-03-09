@@ -1,6 +1,7 @@
 import { filterResults } from "./api/filter/index.mjs";
 import { searchResults } from "./api/search/index.mjs";
 import * as listeners from "./forms/index.mjs";
+import { displayAvatar, displayProfileImg } from "./post/displayAvatar.mjs";
 import { displayPost } from "./post/displaypost.mjs";
 import { displayPosts, displayPostsProfile } from "./posts/displayPosts.mjs";
 import { displayProfile } from "./profile/display.mjs";
@@ -32,6 +33,7 @@ export default function router() {
       displayPosts();
       searchResults();
       filterResults();
+
       break;
 
     case "/post/edit/":
@@ -42,3 +44,6 @@ export default function router() {
       displayPost();
   }
 }
+
+// If logged in, run this code!!!
+displayProfileImg();
