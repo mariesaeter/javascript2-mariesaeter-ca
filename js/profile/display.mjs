@@ -12,6 +12,13 @@ export async function displayProfile() {
   const profile = await readProfile(name);
   const profileInfo = loadLocal("profileInfo");
 
+  const profileName = document.getElementById("profileName");
+  if (name.endsWith("s")) {
+    profileName.innerText = `${name}' feed`;
+  } else {
+    profileName.innerText = `${name}'s feed`;
+  }
+
   const profileSection = document.getElementById("profileInfoContainer");
 
   renderProfileTemplate(profile, profileInfo, profileSection);
