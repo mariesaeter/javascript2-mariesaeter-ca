@@ -66,19 +66,21 @@
             <li
               class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase position-relative"
             >
-              <form>
-                <a
-                  class="nav-link d-flex flex-column align-items-center position-absolute search p-0"
-                >
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                  <span class="mt-1">Search</span>
-                </a>
-                <input
-                  type="search"
-                  class="search-open position-relative overflow-hidden bg-transparent form-control"
-                  placeholder="search here..."
-                />
-              </form>
+            <form id="searchForm" class="d-flex"> 
+              <a
+                class="nav-link d-flex flex-column align-items-center position-absolute search p-0"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span class="mt-1">Search</span>
+            </a>
+              <div class="d-flex">
+            <input required minlength="3"
+                type="search" name="word"
+                class="search-open position-relative overflow-hidden bg-transparent form-control"
+                placeholder="search here..."
+              />
+              </div>
+            </form>
             </li>
           </ul>
         </div>

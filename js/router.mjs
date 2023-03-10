@@ -10,11 +10,11 @@ import { displayProfile } from "./profile/display.mjs";
 export default function router() {
   const path = location.pathname;
   isLoggedIn();
+  searchResults();
 
   switch (path) {
     // more listeners
     case "/":
-      // listeners.setLoginForm();
       break;
 
     case "/profile/login/":
@@ -40,9 +40,10 @@ export default function router() {
       notLoggedIn();
       listeners.setCreatePostForm();
       displayPosts();
-      searchResults();
       filterResults();
 
+      break;
+    case "/search/":
       break;
 
     case "/post/edit/":

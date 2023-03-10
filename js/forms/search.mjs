@@ -1,4 +1,7 @@
+import { searchResults } from "../api/search/index.mjs";
+import { saveLocal } from "../storage/index.mjs";
 import { renderAllPostsTemplate } from "../templates/post.mjs";
+import { reload } from "../tools/location/reload.mjs";
 
 /**
  * Displays posts filtered by search input
@@ -38,13 +41,16 @@ export function setSearchForm(posts) {
       //   location.href = "/../home/search";
       // }, 300);
       console.log(filteredPosts);
-      const results = document.querySelector("#posts");
-      if (filteredPosts.length) {
-        results.innerHTML = "";
-        renderAllPostsTemplate(filteredPosts, results);
-      } else {
-        results.innerHTML = "There are no posts matching your search";
-      }
+      saveLocal("searchResult", filteredPosts);
+      reload("/search/");
+
+      // const results = document.querySelector("#posts");
+      // if (filteredPosts.length) {
+      //   results.innerHTML = "";
+      //   renderAllPostsTemplate(filteredPosts, results);
+      // } else {
+      //   results.innerHTML = "There are no posts matching your search";
+      // }
     });
   }
 }
