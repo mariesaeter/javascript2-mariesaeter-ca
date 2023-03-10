@@ -7,6 +7,12 @@ export function reloadPage() {
   }, 300);
 }
 
+export function reloadCurrentPage() {
+  setTimeout(() => {
+    location.reload();
+  }, 300);
+}
+
 export function reload(path) {
   setTimeout(() => {
     window.location.href = path;

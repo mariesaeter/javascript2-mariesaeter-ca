@@ -3,6 +3,7 @@
 // import { methodPost as method } from "./main.mjs";
 import { registerUser } from "../api/register.mjs";
 import { saveLocal } from "../storage/index.mjs";
+import { reload } from "../tools/location/reload.mjs";
 
 /**
  * Retrieves data from HTML form
@@ -34,6 +35,7 @@ export function setRegisterForm() {
     saveLocal("profileInfo", info);
 
     registerUser(user);
+    reload("/");
   });
 }
 

@@ -1,3 +1,4 @@
+import { reloadCurrentPage } from "../../tools/location/reload.mjs";
 import { api_posts } from "../../url/constants.mjs";
 import { methodDelete as method } from "../../url/constants.mjs";
 import { tokenFetch } from "../tokenFetch.mjs";
@@ -15,9 +16,7 @@ export async function deletePost(id) {
       method,
     });
 
-    setTimeout(() => {
-      location.reload();
-    }, 300);
+    reloadCurrentPage();
 
     return await response.json();
   } catch (error) {

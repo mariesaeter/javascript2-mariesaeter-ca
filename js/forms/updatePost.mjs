@@ -1,6 +1,8 @@
 import { readPost } from "../api/posts/readposts.mjs";
 import { updatePost } from "../api/posts/updateposts.mjs";
 import { displayAvatar } from "../post/displayAvatar.mjs";
+import { backOnePage } from "../tools/location/history.mjs";
+import { reloadCurrentPage } from "../tools/location/reload.mjs";
 
 /**
  * Selects post by id, adds current values to the form
@@ -39,9 +41,7 @@ export async function setUpdatePostForm() {
       post.title = [post.selectTitle + ": " + post.bookTitle].join("");
 
       updatePost(post);
-      setTimeout(() => {
-        history.back();
-      }, 500);
+      backOnePage();
     });
   }
 }

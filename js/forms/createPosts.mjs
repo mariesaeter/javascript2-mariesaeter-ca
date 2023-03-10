@@ -1,5 +1,6 @@
 import { createPost } from "../api/posts/createposts.mjs";
 import { displayAvatar } from "../post/displayAvatar.mjs";
+import { reloadCurrentPage } from "../tools/location/reload.mjs";
 
 /**
  * Retrieves data from html form
@@ -19,5 +20,6 @@ export function setCreatePostForm() {
     post.title = [post.selectTitle + ": " + post.bookTitle].join("");
 
     createPost(post);
+    reloadCurrentPage();
   });
 }
