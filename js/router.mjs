@@ -4,6 +4,7 @@ import * as listeners from "./forms/index.mjs";
 import { displayAvatar, displayProfileImg } from "./post/displayAvatar.mjs";
 import { displayPost } from "./post/displaypost.mjs";
 import { displayPosts, displayPostsProfile } from "./posts/displayPosts.mjs";
+import { isLoggedIn } from "./profile/checkLoggedIn.mjs";
 import { displayProfile } from "./profile/display.mjs";
 
 export default function router() {
@@ -11,6 +12,10 @@ export default function router() {
 
   switch (path) {
     // more listeners
+    case "/":
+      isLoggedIn();
+      break;
+
     case "/profile/login/":
       listeners.setLoginForm();
       break;
@@ -42,8 +47,8 @@ export default function router() {
 
     case "/post/":
       displayPost();
+      break;
   }
 }
 
-// If logged in, run this code!!!
 displayProfileImg();
