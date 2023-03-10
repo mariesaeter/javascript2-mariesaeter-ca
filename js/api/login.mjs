@@ -1,6 +1,7 @@
 import { methodPost as method } from "../url/constants.mjs";
 import { api_login } from "../url/constants.mjs";
 import * as storage from "../storage/index.mjs";
+import { reload } from "../tools/location/reload.mjs";
 
 /**
  * Sign in existing user
@@ -27,8 +28,11 @@ export async function signInUser(user) {
     storage.saveLocal("profile", profile);
 
     // send user to profile page
-    window.location = `/../profile/?name=${profile.name}`;
+
+    // window.location = `/../profile/?name=${profile.name}`;
   } catch (error) {
     console.log(error);
   }
+
+  reload(`/profile/?name=${profile.name}`);
 }
