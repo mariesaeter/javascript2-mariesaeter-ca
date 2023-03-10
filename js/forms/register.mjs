@@ -23,7 +23,7 @@ export function setRegisterForm() {
     }
 
     // Save additional information from edit form
-    const { age, from, genre, ...profile } = user;
+    const { age, from, genre } = user;
 
     const info = {
       age,
@@ -32,9 +32,8 @@ export function setRegisterForm() {
     };
 
     saveLocal("profileInfo", info);
-    saveLocal("profile", profile);
 
-    registerUser(profile);
+    registerUser(user);
   });
 }
 
