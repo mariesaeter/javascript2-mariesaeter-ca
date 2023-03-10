@@ -28,11 +28,9 @@ export async function signInUser(user) {
     storage.saveLocal("profile", profile);
 
     // send user to profile page
-
+    reload(`/profile/?name=${profile.name}`);
     // window.location = `/../profile/?name=${profile.name}`;
   } catch (error) {
     console.log(error);
   }
-
-  reload(`/profile/?name=${profile.name}`);
 }
