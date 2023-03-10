@@ -4,16 +4,17 @@ import * as listeners from "./forms/index.mjs";
 import { displayAvatar, displayProfileImg } from "./post/displayAvatar.mjs";
 import { displayPost } from "./post/displaypost.mjs";
 import { displayPosts, displayPostsProfile } from "./posts/displayPosts.mjs";
-import { isLoggedIn } from "./profile/checkLoggedIn.mjs";
+import { isLoggedIn, notLoggedIn } from "./profile/checkLoggedIn.mjs";
 import { displayProfile } from "./profile/display.mjs";
 
 export default function router() {
   const path = location.pathname;
+  isLoggedIn();
 
   switch (path) {
     // more listeners
     case "/":
-      isLoggedIn();
+      // listeners.setLoginForm();
       break;
 
     case "/profile/login/":
@@ -23,10 +24,12 @@ export default function router() {
       listeners.setRegisterForm();
       break;
     case "/profile/edit/":
+      notLoggedIn();
       listeners.setUpdateProfileForm();
 
       break;
     case "/profile/":
+      notLoggedIn();
       listeners.setCreatePostForm();
       displayProfile();
       displayPostsProfile();
@@ -34,6 +37,7 @@ export default function router() {
 
     // display posts for that user
     case "/home/":
+      notLoggedIn();
       listeners.setCreatePostForm();
       displayPosts();
       searchResults();
@@ -42,10 +46,12 @@ export default function router() {
       break;
 
     case "/post/edit/":
+      notLoggedIn();
       listeners.setUpdatePostForm();
       break;
 
     case "/post/":
+      notLoggedIn();
       displayPost();
       break;
   }

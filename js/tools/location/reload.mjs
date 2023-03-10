@@ -9,6 +9,6 @@ export function reloadPage() {
 
 export function reload(path) {
   setTimeout(() => {
-    location.href = path;
+    window.location.href = path;
   }, 300);
 }
