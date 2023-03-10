@@ -9,6 +9,7 @@ export async function isLoggedIn() {
 
     if (profile) {
       location.href = "/home/";
+      displayProfileImg();
     } else {
       location.href = "/index.html";
     }

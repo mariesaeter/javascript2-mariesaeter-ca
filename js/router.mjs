@@ -50,5 +50,3 @@ export default function router() {
       break;
   }
 }
-
-displayProfileImg();

@@ -29,56 +29,61 @@ export function profileTemplate(profileData, infoData) {
   profileName.innerText = `${profileData.name}`;
 
   // create info
-  const infoClassesDivs = "d-flex justify-content-center";
-  const infoClassesTitles = "text-primary fw-semibold me-2";
+  if (infoData) {
+    const infoClassesDivs = "d-flex justify-content-center";
+    const infoClassesTitles = "text-primary fw-semibold me-2";
 
-  // age text
-  const ageContainer = document.createElement("div");
-  ageContainer.className = infoClassesDivs;
+    // age text
+    const ageContainer = document.createElement("div");
+    ageContainer.className = infoClassesDivs;
 
-  const ageTitle = document.createElement("p");
-  ageTitle.innerText = "Age: ";
-  ageTitle.className = infoClassesTitles;
+    const ageTitle = document.createElement("p");
+    ageTitle.innerText = "Age: ";
+    ageTitle.className = infoClassesTitles;
 
-  const age = document.createElement("span");
-  age.innerText = `${infoData.age} years`;
+    const age = document.createElement("span");
+    age.innerText = `${infoData.age} years`;
 
-  ageContainer.append(ageTitle, age);
+    ageContainer.append(ageTitle, age);
 
-  // from text
-  const fromContainer = document.createElement("div");
-  fromContainer.className = infoClassesDivs;
+    // from text
+    const fromContainer = document.createElement("div");
+    fromContainer.className = infoClassesDivs;
 
-  const fromTitle = document.createElement("p");
-  fromTitle.innerText = "From: ";
-  fromTitle.className = infoClassesTitles;
+    const fromTitle = document.createElement("p");
+    fromTitle.innerText = "From: ";
+    fromTitle.className = infoClassesTitles;
 
-  const from = document.createElement("span");
-  from.innerText = `${infoData.from}`;
+    const from = document.createElement("span");
+    from.innerText = `${infoData.from}`;
 
-  fromContainer.append(fromTitle, from);
+    fromContainer.append(fromTitle, from);
 
-  // genre text
-  const genreContainer = document.createElement("div");
-  genreContainer.className = infoClassesDivs;
+    // genre text
+    const genreContainer = document.createElement("div");
+    genreContainer.className = infoClassesDivs;
 
-  const genreTitle = document.createElement("p");
-  genreTitle.innerText = "Favorite genre: ";
-  genreTitle.className = infoClassesTitles;
+    const genreTitle = document.createElement("p");
+    genreTitle.innerText = "Favorite genre: ";
+    genreTitle.className = infoClassesTitles;
 
-  const genre = document.createElement("span");
-  genre.innerText = `${infoData.genre}`;
+    const genre = document.createElement("span");
+    genre.innerText = `${infoData.genre}`;
 
-  genreContainer.append(genreTitle, genre);
+    genreContainer.append(genreTitle, genre);
 
-  mainDiv.append(
-    avatarContainer,
-    profileName,
-    ageContainer,
-    fromContainer,
-    genreContainer
-  );
+    mainDiv.append(
+      avatarContainer,
+      profileName,
+      ageContainer,
+      fromContainer,
+      genreContainer
+    );
+  }
 
+  if (!infoData) {
+    mainDiv.append(avatarContainer, profileName);
+  }
   return mainDiv;
 }
 
@@ -89,5 +94,9 @@ export function profileTemplate(profileData, infoData) {
  * @param {Object} parent - html container
  */
 export function renderProfileTemplate(profileData, infoData, parent) {
-  parent.append(profileTemplate(profileData, infoData));
+  if (infoData) {
+    parent.append(profileTemplate(profileData, infoData));
+  } else {
+    parent.appendChild(profileTemplate(profileData));
+  }
 }
