@@ -2,6 +2,7 @@
 // import { POST_Options } from "./main.mjs";
 // import { methodPost as method } from "./main.mjs";
 import { registerUser } from "../api/register.mjs";
+import { saveLocal } from "../storage/index.mjs";
 
 /**
  * Retrieves data from HTML form
