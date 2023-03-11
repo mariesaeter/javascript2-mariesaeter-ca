@@ -1,6 +1,6 @@
 /**
  * Formats date to be displayed on posts
- * @param {string} postDate - date from api
+ * @param {string} postDate - post.created from api
  * @returns - date in format "Month DD, HH:MM"
  * @example
  * "Mar 8, 20:30"
@@ -23,7 +23,7 @@ export function formatDate(postDate) {
 
 /**
  * Formats date to be used in filter
- * @param {string} postDate - date from api
+ * @param {string} postDate - post.created from api
  * @returns - date in format "YYYY-MM-DD"
  * @example
  * "2023-03-08"

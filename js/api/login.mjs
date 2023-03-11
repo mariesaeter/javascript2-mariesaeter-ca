@@ -1,7 +1,7 @@
-import { methodPost as method } from "../url/constants.mjs";
-import { api_login } from "../url/constants.mjs";
+import { methodPost as method } from "../tools/constants.mjs";
+import { api_login } from "../tools/constants.mjs";
 import * as storage from "../storage/index.mjs";
-import { reload } from "../tools/location/reload.mjs";
+import { redirect } from "../tools/location/reload.mjs";
 
 /**
  * Sign in existing user
@@ -28,8 +28,7 @@ export async function signInUser(user) {
     storage.saveLocal("profile", profile);
 
     // send user to profile page
-    reload(`/profile/?name=${profile.name}`);
-    // window.location = `/../profile/?name=${profile.name}`;
+    redirect(`/profile/?name=${profile.name}`);
   } catch (error) {
     console.log(error);
   }

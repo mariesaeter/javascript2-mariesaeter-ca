@@ -1,5 +1,5 @@
-import { api_posts } from "../../url/constants.mjs";
-import { methodPut as method } from "../../url/constants.mjs";
+import { api_posts } from "../../tools/constants.mjs";
+import { methodPut as method } from "../../tools/constants.mjs";
 import { tokenFetch } from "../tokenFetch.mjs";
 
 /**

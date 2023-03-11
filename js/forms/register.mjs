@@ -1,9 +1,6 @@
-// import { api_Url_Base } from "./main.mjs";
-// import { POST_Options } from "./main.mjs";
-// import { methodPost as method } from "./main.mjs";
 import { registerUser } from "../api/register.mjs";
 import { saveLocal } from "../storage/index.mjs";
-import { reload } from "../tools/location/reload.mjs";
+import { redirect } from "../tools/location/reload.mjs";
 
 /**
  * Retrieves data from HTML form
@@ -16,14 +13,13 @@ export function setRegisterForm() {
     const form = event.target;
     const formData = new FormData(form);
     const user = Object.fromEntries(formData.entries());
-    console.log(user);
 
     if (user.avatar === null) {
       user.avatar.value =
         "https://user-images.githubusercontent.com/96269610/221194479-4165c632-1e55-4eb8-ac91-a64a28e1be17.png";
     }
 
-    // Save additional information from edit form
+    // Save additional information from edit form (this is only saved locally so this information is the same when browsing different profiles)
     const { age, from, genre } = user;
 
     const info = {
@@ -35,17 +31,7 @@ export function setRegisterForm() {
     saveLocal("profileInfo", info);
 
     registerUser(user);
-    reload("/");
+    // send to login page
+    redirect("/");
   });
 }
-
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   const form = event.target;
-//   const user = {
-//     name: form.name.value,
-//     email: form.email.value,
-//     password: form.password.value,
-//   };
-//   registerUser(`${api_Url_Base}/auth/register`, user);
-// });

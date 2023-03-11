@@ -1,7 +1,5 @@
-import { searchResults } from "../api/search/index.mjs";
 import { saveLocal } from "../storage/index.mjs";
-import { renderAllPostsTemplate } from "../templates/post.mjs";
-import { reload } from "../tools/location/reload.mjs";
+import { redirect } from "../tools/location/reload.mjs";
 
 /**
  * Displays posts filtered by search input
@@ -18,6 +16,7 @@ export function setSearchForm(posts) {
       const searchWord = form.word.value;
       const word = searchWord.toLowerCase();
 
+      // filter so that it is possible to get search results from title, body, profile and tags
       const filteredPosts = posts.filter(function (post) {
         const title = post.title.toLowerCase();
         const body = post.body.toLowerCase();
@@ -36,21 +35,9 @@ export function setSearchForm(posts) {
         );
       });
 
-      // location.href = "/../home/search";
-      // setTimeout(() => {
-      //   location.href = "/../home/search";
-      // }, 300);
-      console.log(filteredPosts);
+      // save search result locally so that it can be used on the redirected search page
       saveLocal("searchResult", filteredPosts);
-      reload("/search/");
-
-      // const results = document.querySelector("#posts");
-      // if (filteredPosts.length) {
-      //   results.innerHTML = "";
-      //   renderAllPostsTemplate(filteredPosts, results);
-      // } else {
-      //   results.innerHTML = "There are no posts matching your search";
-      // }
+      redirect("/search/");
     });
   }
 }

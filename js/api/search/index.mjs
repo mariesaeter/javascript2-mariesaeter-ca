@@ -1,7 +1,7 @@
 import { setSearchForm } from "../../forms/search.mjs";
 import { loadLocal } from "../../storage/index.mjs";
 import { renderAllPostsTemplate } from "../../templates/post.mjs";
-import { readPosts } from "../posts/readposts.mjs";
+import { readPosts } from "../posts/index.mjs";
 
 /**
  * Clears container and fetches posts

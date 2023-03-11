@@ -1,5 +1,3 @@
-// avatar
-
 import { noAvatar } from "../tools/noAvatar.mjs";
 
 /**
@@ -10,26 +8,28 @@ import { noAvatar } from "../tools/noAvatar.mjs";
  */
 export function profileTemplate(profileData, infoData) {
   const mainDiv = document.createElement("div");
+  const { name, avatar } = profileData;
 
   // create avatar image
   const avatarContainer = document.createElement("div");
   avatarContainer.className =
     "position-relative overflow-hidden profileImageContainer";
 
-  const avatar = document.createElement("img");
-  avatar.className =
+  const avatarImg = document.createElement("img");
+  avatarImg.className =
     "rounded-circle w-75 h-75 position-absolute top-50 start-50 translate-middle object-fit-cover";
-  avatar.setAttribute("alt", `${profileData.name}'s profile image`);
-  avatar.src = `${profileData.avatar}`;
-  noAvatar(profileData.avatar, avatar);
+  avatarImg.setAttribute("alt", `${name}'s profile image`);
+  avatarImg.src = `${avatar}`;
+  noAvatar(avatar, avatarImg);
 
-  avatarContainer.appendChild(avatar);
+  avatarContainer.appendChild(avatarImg);
   // create h1
   const profileName = document.createElement("h1");
-  profileName.innerText = `${profileData.name}`;
+  profileName.innerText = `${name}`;
 
   // create info
   if (infoData) {
+    const { age, from, genre } = infoData;
     const infoClassesDivs = "d-flex justify-content-center";
     const infoClassesTitles = "text-primary fw-semibold me-2";
 
@@ -41,10 +41,10 @@ export function profileTemplate(profileData, infoData) {
     ageTitle.innerText = "Age: ";
     ageTitle.className = infoClassesTitles;
 
-    const age = document.createElement("span");
-    age.innerText = `${infoData.age} years`;
+    const ageText = document.createElement("span");
+    ageText.innerText = `${age} years`;
 
-    ageContainer.append(ageTitle, age);
+    ageContainer.append(ageTitle, ageText);
 
     // from text
     const fromContainer = document.createElement("div");
@@ -54,10 +54,10 @@ export function profileTemplate(profileData, infoData) {
     fromTitle.innerText = "From: ";
     fromTitle.className = infoClassesTitles;
 
-    const from = document.createElement("span");
-    from.innerText = `${infoData.from}`;
+    const fromText = document.createElement("span");
+    fromText.innerText = `${from}`;
 
-    fromContainer.append(fromTitle, from);
+    fromContainer.append(fromTitle, fromText);
 
     // genre text
     const genreContainer = document.createElement("div");
@@ -67,10 +67,10 @@ export function profileTemplate(profileData, infoData) {
     genreTitle.innerText = "Favorite genre: ";
     genreTitle.className = infoClassesTitles;
 
-    const genre = document.createElement("span");
-    genre.innerText = `${infoData.genre}`;
+    const genreText = document.createElement("span");
+    genreText.innerText = `${genre}`;
 
-    genreContainer.append(genreTitle, genre);
+    genreContainer.append(genreTitle, genreText);
 
     mainDiv.append(
       avatarContainer,
@@ -79,9 +79,7 @@ export function profileTemplate(profileData, infoData) {
       fromContainer,
       genreContainer
     );
-  }
-
-  if (!infoData) {
+  } else {
     mainDiv.append(avatarContainer, profileName);
   }
   return mainDiv;

@@ -1,6 +1,6 @@
 import { renderAllPostsTemplate } from "../templates/post.mjs";
 import { formatDateFilter } from "../tools/dateFormat.mjs";
-import { reloadPage } from "../tools/location/reload.mjs";
+import { reloadCurrentPage } from "../tools/location/reload.mjs";
 
 /**
  * Filters posts by date
@@ -17,10 +17,9 @@ export function setFilterForm(posts) {
       const input = event.target;
       const dateInput = input.value;
 
-      console.log(dateInput);
+      // filter based on date
       const filteredPosts = posts.filter(function (post) {
         const date = formatDateFilter(post.created);
-        console.log(date);
 
         return date.includes(dateInput);
       });
@@ -38,7 +37,7 @@ export function setFilterForm(posts) {
   if (button) {
     button.addEventListener("click", (event) => {
       event.preventDefault();
-      reloadPage();
+      reloadCurrentPage();
     });
   }
 }

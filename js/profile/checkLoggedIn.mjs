@@ -1,8 +1,6 @@
-import { readPost } from "../api/posts/readposts.mjs";
-import { readProfile } from "../api/profiles/readProfile.mjs";
-import { displayProfileImg } from "../post/displayAvatar.mjs";
+import { displayProfileImg } from "../tools/displayAvatar.mjs";
 import { loadLocal } from "../storage/index.mjs";
-import { reload } from "../tools/location/reload.mjs";
+import { redirect } from "../tools/location/reload.mjs";
 
 export async function isLoggedIn() {
   try {
@@ -10,8 +8,6 @@ export async function isLoggedIn() {
 
     if (profile) {
       displayProfileImg();
-      // } else {
-      //   location = "/";
     }
   } catch (error) {
     console.log(error);
@@ -22,6 +18,6 @@ export function notLoggedIn() {
   const profile = loadLocal("profile");
 
   if (!profile) {
-    reload("/");
+    redirect("/");
   }
 }

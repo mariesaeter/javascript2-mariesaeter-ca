@@ -1,6 +1,5 @@
-// import { createAccessToken } from "../login.mjs";
-import { api_posts } from "../../url/constants.mjs";
-import { methodPost as method } from "../../url/constants.mjs";
+import { api_posts } from "../../tools/constants.mjs";
+import { methodPost as method } from "../../tools/constants.mjs";
 import { tokenFetch } from "../tokenFetch.mjs";
 
 /**

@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Home page of Bokvenn" />
     <title>Bokvenn | Home</title>
-     <!-- Website icon -->
-     <link
-     rel="icon"
-     type="image/svg"
-     sizes="16x16"
-     href="/images/home-icon.png"
-   />
-   <link
-     rel="icon"
-     type="image/svg"
-     sizes="32x32"
-     href="/images/home-icon.png"
-   />
-   <!-- Bootstrap stylesheet -->
-   <link
-     rel="stylesheet"
-     href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
-   />
-   <link rel="stylesheet" href="/css/styles.css" />
-   <!-- Fontawsome icons script -->
-   <script
-     src="https://kit.fontawesome.com/a2324745d3.js"
-     crossorigin="anonymous"
-   ></script>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar shadow fixed-top">
+    <!-- Website icon -->
+    <link
+      rel="icon"
+      type="image/svg"
+      sizes="16x16"
+      href="/images/home-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/svg"
+      sizes="32x32"
+      href="/images/home-icon.png"
+    />
+    <!-- Bootstrap stylesheet -->
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- Fontawsome icons script -->
+    <script
+      src="https://kit.fontawesome.com/a2324745d3.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Js script -->
+    <script type="module" src="/js/index.mjs" defer></script>
+  </head>
+  <body>
+    <header>
+      <!-- Navigation -->
+      <nav class="navbar shadow fixed-top">
         <div
           class="container-fluid justify-content-between mx-md-4 mx-lg-4 mx-xl-5"
         >
@@ -60,25 +63,31 @@
                 >Sign out</a
               >
             </li>
-            <li class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase" id="profileImg">
-            
+            <li
+              class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase"
+              id="profileImg"
+            >
+              <!-- Profile image injected by javascript -->
             </li>
             <li
               class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase position-relative"
             >
-              <form id="searchForm" class="d-flex"> 
+              <form id="searchForm" class="d-flex">
                 <a
                   class="nav-link d-flex flex-column align-items-center position-absolute search p-0"
                 >
                   <i class="fa-solid fa-magnifying-glass"></i>
                   <span class="mt-1">Search</span>
-              </a>
+                </a>
                 <div class="d-flex">
-              <input required minlength="3"
-                  type="search" name="word"
-                  class="search-open position-relative overflow-hidden bg-transparent form-control"
-                  placeholder="search here..."
-                />
+                  <input
+                    required
+                    minlength="3"
+                    type="search"
+                    name="word"
+                    class="search-open position-relative overflow-hidden bg-transparent form-control"
+                    placeholder="search here..."
+                  />
                 </div>
               </form>
             </li>
@@ -93,13 +102,12 @@
           <div class="col-12 col-sm-12 col-md-9 col-l-7 col-xl-7">
             <h1>Newsfeed</h1>
             <!-- Create new post -->
-             <!-- Create new post -->
-             <div class="bg-white rounded shadow p-3 my-3">
-              <div class="align-items-center" id="avatarContainer">
-              
-              </div>
+            <!-- Create new post -->
+            <div class="bg-white rounded shadow p-3 my-3">
+              <div class="align-items-center" id="avatarContainer"></div>
               <form class="mt-3" id="createPostForm">
-                <select name="selectTitle"
+                <select
+                  name="selectTitle"
                   class="form-select rounded"
                   aria-label="select reading status"
                   required
@@ -110,14 +118,15 @@
                   <option value="DNF'ed book">DNF'ed book</option>
                   <option value="No reading status">No reading status</option>
                 </select>
-                  <input
-                    type="text"
-                    name="bookTitle"
-                    class="form-control mt-3"
-                    id="inputBook"
-                    placeholder="What book (optional)"
-                  />
-                <textarea name="body"
+                <input
+                  type="text"
+                  name="bookTitle"
+                  class="form-control mt-3"
+                  id="inputBook"
+                  placeholder="What book (optional)"
+                />
+                <textarea
+                  name="body"
                   class="form-control rounded mt-3"
                   placeholder="What do you want to say?"
                   required
@@ -128,26 +137,31 @@
                 >
                   Create post
                 </button>
-                </form>
-              </div>
-              </div>
-              </div>
-            <!-- Posts -->
-            <div class="bg-white rounded shadow p-3 my-3">
-              <h2>Filter posts</h2>
-              <form id="filterForm">
-              <input type="date" id="date" name="date" class="form-control rounded mt-3">
-              <button class="btn btn-primary text-white rounded-pill mt-3" id="clearFilter">Clear</button>
               </form>
             </div>
-           <section id="filterResults"></section>
-
-            <section id="posts">
-      
-            
-            </section>
           </div>
         </div>
+        <!-- Posts -->
+        <div class="bg-white rounded shadow p-3 my-3">
+          <h2>Filter posts</h2>
+          <form id="filterForm">
+            <input
+              type="date"
+              id="date"
+              name="date"
+              class="form-control rounded mt-3"
+            />
+            <button
+              class="btn btn-primary text-white rounded-pill mt-3"
+              id="clearFilter"
+            >
+              Clear
+            </button>
+          </form>
+        </div>
+        <section id="filterResults"></section>
+
+        <section id="posts"></section>
       </div>
     </main>
     <!-- Footer -->
@@ -172,6 +186,5 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="/js/index.mjs"></script>
-</body>
+  </body>
 </html>

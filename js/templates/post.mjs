@@ -1,14 +1,7 @@
 import { deletePost } from "../api/posts/deleteposts.mjs";
-import { readPost } from "../api/posts/readposts.mjs";
 import { loadLocal } from "../storage/index.mjs";
 import { formatDate } from "../tools/dateFormat.mjs";
 import { noAvatar } from "../tools/noAvatar.mjs";
-// access author properties
-// export function getAuthor(authorData) {
-//   for (let i = 0; i < authorData.length; i++) {
-//     return authorData[i].author;
-//   }
-// }
 
 /**
  *
@@ -45,6 +38,9 @@ export function postTemplate(postData) {
   //     </div>
   // </div>
 
+  const { author, created, title, body, id } = postData;
+  const { name, avatar } = author;
+
   // create main div element
   const mainDiv = document.createElement("div");
   mainDiv.className = "card shadow p-3 my-4";
@@ -55,13 +51,10 @@ export function postTemplate(postData) {
 
   // create avatar image
 
-  const avatar = document.createElement("img");
-  avatar.className = "rounded-circle medium-profile-img";
-  // avatar.setAttribute("alt", `${postData.author.name}'s profile image`);
-  avatar.src = `${postData.author.avatar}`;
-  noAvatar(postData.author.avatar, avatar);
-
-  // create h1
+  const avatarImg = document.createElement("img");
+  avatarImg.className = "rounded-circle medium-profile-img";
+  avatarImg.src = `${avatar}`;
+  noAvatar(avatar, avatarImg);
 
   // child of childDivOne, parent of thirdChildDivOne
   const secondChildDivOne = document.createElement("div");
@@ -71,35 +64,34 @@ export function postTemplate(postData) {
   thirdChildDivOne.className = "d-flex justify-content-between";
 
   const profileName = document.createElement("a");
-  profileName.innerText = `${postData.author.name}`;
+  profileName.innerText = `${name}`;
 
-  profileName.setAttribute("href", `/../profile/?name=${postData.author.name}`);
+  profileName.setAttribute("href", `/../profile/?name=${name}`);
 
   const postDateContainer = document.createElement("small");
   postDateContainer.className = "fw-light";
 
-  postDateContainer.innerText = `${formatDate(postData.created)}`;
+  postDateContainer.innerText = `${formatDate(created)}`;
 
   const thirdChildDivTwo = document.createElement("div");
   thirdChildDivTwo.className = "d-flex align-items-center";
-  // Add status icon
+
   const postTitleContainer = document.createElement("small");
   postTitleContainer.className = "fw-light ps-1";
 
-  const postTitle = document.createTextNode(`${postData.title}`);
+  const postTitle = document.createTextNode(`${title}`);
   postTitleContainer.appendChild(postTitle);
 
   const bodyContainer = document.createElement("p");
   bodyContainer.className = "pt-4 px-2";
 
-  const bodyContent = document.createTextNode(`${postData.body}`);
+  const bodyContent = document.createTextNode(`${body}`);
 
   // add body text to body container
   bodyContainer.appendChild(bodyContent);
 
   const childDivTwo = document.createElement("div");
   childDivTwo.className = "d-flex justify-content-between";
-  // childDivTwo links
 
   const linkChildDivOne = document.createElement("div");
   const likeLink = document.createElement("button");
@@ -111,9 +103,10 @@ export function postTemplate(postData) {
   const viewLink = document.createElement("button");
   viewLink.className = "ms-3 btn btn-link";
   const viewLinkText = document.createTextNode("view post");
+
   // action to send to single post page
   viewLink.addEventListener("click", () => {
-    window.location = `/post/?id=${postData.id}`;
+    window.location = `/post/?id=${id}`;
   });
 
   likeLink.appendChild(likeLinkText);
@@ -121,24 +114,24 @@ export function postTemplate(postData) {
   viewLink.appendChild(viewLinkText);
   linkChildDivOne.append(likeLink, commentLink, viewLink);
 
-  // only show delete and update for the person who has created the post ( write it more simple? )
+  // only show delete and update for the person who has created the post
   const profile = loadLocal("profile");
 
-  if (postData.author.name === profile.name) {
+  if (name === profile.name) {
     const linkChildDivTwo = document.createElement("div");
     const updateLink = document.createElement("button");
     updateLink.className = "btn btn-link";
     const updateLinkText = document.createTextNode("update");
     // action to send to update post page
     updateLink.addEventListener("click", () => {
-      window.location = `/post/edit/?id=${postData.id}`;
+      window.location = `/post/edit/?id=${id}`;
     });
 
     const deleteLink = document.createElement("button");
     deleteLink.className = "ms-3 btn btn-link";
     const deleteLinkText = document.createTextNode("delete");
     deleteLink.addEventListener("click", () => {
-      deletePost(postData.id);
+      deletePost(id);
     });
 
     updateLink.appendChild(updateLinkText);
@@ -155,7 +148,7 @@ export function postTemplate(postData) {
   thirdChildDivOne.append(profileName, postDateContainer);
   thirdChildDivTwo.appendChild(postTitleContainer);
   secondChildDivOne.append(thirdChildDivOne, thirdChildDivTwo);
-  childDivOne.append(avatar, secondChildDivOne);
+  childDivOne.append(avatarImg, secondChildDivOne);
 
   // add everything to the main div
   mainDiv.append(childDivOne, bodyContainer, childDivTwo);
@@ -179,7 +172,7 @@ export function renderPostTemplate(postData, parent) {
  */
 export function renderPostTemplates(postData, parent) {
   postData.every((postData, index) => {
-    if (index > 20) {
+    if (index > 25) {
       return false;
     }
     parent.append(postTemplate(postData));

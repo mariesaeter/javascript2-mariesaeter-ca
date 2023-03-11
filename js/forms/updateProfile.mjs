@@ -1,6 +1,7 @@
 import { readProfile, updateProfile } from "../api/profiles/index.mjs";
 
 import { loadLocal, saveLocal } from "../storage/index.mjs";
+import { backOnePage } from "../tools/location/history.mjs";
 
 /**
  * Selects current profile throguh local storage, adds current values to the form
@@ -17,7 +18,6 @@ export async function setUpdateProfileForm() {
       form.email.value = email;
       form.avatar.value = avatar;
       const profile = await readProfile(name);
-      console.log(profile);
 
       // add values to form
       form.banner.value = profile.banner;
@@ -31,7 +31,6 @@ export async function setUpdateProfileForm() {
         const form = event.target;
         const formData = new FormData(form);
         const profile = Object.fromEntries(formData.entries());
-        console.log(profile);
         profile.name = name;
         profile.email = email;
 
@@ -47,7 +46,6 @@ export async function setUpdateProfileForm() {
         saveLocal("profileInfo", info);
 
         updateProfile(profile);
-        console.log(profile);
         saveLocal("profile", profile);
       });
     }

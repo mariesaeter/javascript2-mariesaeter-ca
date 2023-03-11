@@ -1,22 +1,16 @@
 import { filterResults } from "./api/filter/index.mjs";
 import { searchResults } from "./api/search/index.mjs";
 import * as listeners from "./forms/index.mjs";
-import { displayAvatar, displayProfileImg } from "./post/displayAvatar.mjs";
 import { displayPost } from "./post/displaypost.mjs";
 import { displayPosts, displayPostsProfile } from "./posts/displayPosts.mjs";
-import { isLoggedIn, notLoggedIn } from "./profile/checkLoggedIn.mjs";
-import { displayProfile } from "./profile/display.mjs";
+import * as profile from "./profile/index.mjs";
 
 export default function router() {
   const path = location.pathname;
-  isLoggedIn();
+  profile.isLoggedIn();
   searchResults();
 
   switch (path) {
-    // more listeners
-    case "/":
-      break;
-
     case "/profile/login/":
       listeners.setLoginForm();
       break;
@@ -24,35 +18,36 @@ export default function router() {
       listeners.setRegisterForm();
       break;
     case "/profile/edit/":
-      notLoggedIn();
+      profile.notLoggedIn();
       listeners.setUpdateProfileForm();
 
       break;
     case "/profile/":
-      notLoggedIn();
+      profile.notLoggedIn();
       listeners.setCreatePostForm();
-      displayProfile();
+      profile.displayProfile();
       displayPostsProfile();
       break;
 
     // display posts for that user
     case "/home/":
-      notLoggedIn();
+      profile.notLoggedIn();
       listeners.setCreatePostForm();
       displayPosts();
       filterResults();
 
       break;
     case "/search/":
+      profile.notLoggedIn();
       break;
 
     case "/post/edit/":
-      notLoggedIn();
+      profile.notLoggedIn();
       listeners.setUpdatePostForm();
       break;
 
     case "/post/":
-      notLoggedIn();
+      profile.notLoggedIn();
       displayPost();
       break;
   }

@@ -1,5 +1,5 @@
-import { methodPost as method } from "../url/constants.mjs";
-import { api_register } from "../url/constants.mjs";
+import { methodPost as method } from "../tools/constants.mjs";
+import { api_register } from "../tools/constants.mjs";
 
 /**
  * Register new user

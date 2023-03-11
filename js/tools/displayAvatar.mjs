@@ -10,6 +10,9 @@ export function displayAvatar() {
   template.renderAvatarTemplate(profile, avatar);
 }
 
+/**
+ * Display avatar and name for logged in user in navigation
+ */
 export function displayProfileImg() {
   const profileImg = document.getElementById("profileImg");
   const profile = loadLocal("profile");

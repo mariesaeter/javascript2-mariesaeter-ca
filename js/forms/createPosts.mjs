@@ -1,5 +1,5 @@
-import { createPost } from "../api/posts/createposts.mjs";
-import { displayAvatar } from "../post/displayAvatar.mjs";
+import { createPost } from "../api/posts/index.mjs";
+import { displayAvatar } from "../tools/displayAvatar.mjs";
 import { reloadCurrentPage } from "../tools/location/reload.mjs";
 
 /**
@@ -15,11 +15,11 @@ export function setCreatePostForm() {
     const form = event.target;
     const formData = new FormData(form);
     const post = Object.fromEntries(formData.entries());
-    console.log(post);
 
     post.title = [post.selectTitle + ": " + post.bookTitle].join("");
 
     createPost(post);
     reloadCurrentPage();
+    form.reset();
   });
 }

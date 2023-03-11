@@ -1,8 +1,6 @@
-import { readPost } from "../api/posts/readposts.mjs";
-import { updatePost } from "../api/posts/updateposts.mjs";
-import { displayAvatar } from "../post/displayAvatar.mjs";
+import * as crud from "../api/posts/index.mjs";
+import { displayAvatar } from "../tools/displayAvatar.mjs";
 import { backOnePage } from "../tools/location/history.mjs";
-import { reloadCurrentPage } from "../tools/location/reload.mjs";
 
 /**
  * Selects post by id, adds current values to the form
@@ -19,14 +17,19 @@ export async function setUpdatePostForm() {
     const button = form.querySelector("button");
     button.disabled = true;
 
-    const postData = await readPost(id);
+    const postData = await crud.readPost(id);
+    const { title, body } = postData;
 
-    // split the title string into select title and book title
-    const splitTitle = postData.title.split(": ");
-    // add values to form
-    form.selectTitle.value = splitTitle[0];
-    form.bookTitle.value = splitTitle[1];
-    form.body.value = postData.body;
+    // split the title string into select title and book title only if title includes ":".
+    if (title.includes(":")) {
+      const splitTitle = postData.title.split(": ");
+      // add values to form
+      form.selectTitle.value = splitTitle[0];
+      form.bookTitle.value = splitTitle[1];
+    } else {
+      form.bookTitle.value = title;
+    }
+    form.body.value = body;
 
     button.disabled = false;
 
@@ -35,12 +38,11 @@ export async function setUpdatePostForm() {
       const form = event.target;
       const formData = new FormData(form);
       const post = Object.fromEntries(formData.entries());
-      console.log(post);
       post.id = id;
 
       post.title = [post.selectTitle + ": " + post.bookTitle].join("");
 
-      updatePost(post);
+      crud.updatePost(post);
       backOnePage();
     });
   }

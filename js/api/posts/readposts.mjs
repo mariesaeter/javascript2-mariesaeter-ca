@@ -1,5 +1,4 @@
-import { api_posts } from "../../url/constants.mjs";
-import { api_profile } from "../../url/constants.mjs";
+import { api_posts, api_profile } from "../../tools/constants.mjs";
 import { tokenFetch } from "../tokenFetch.mjs";
 
 /**
