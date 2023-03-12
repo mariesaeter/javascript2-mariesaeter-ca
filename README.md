@@ -2,9 +2,10 @@
 
  A social media application for booklovers
 
- > Live demo [_here_](https://transcendent-squirrel-577241.netlify.app)
+ > Live demo [_here_](https://bokvenn.netlify.app)
 
- <img width="1440" alt="bokvenn-profilepage-screenshot" src="https://user-images.githubusercontent.com/96269610/215337537-d40984e0-d83d-4cff-b255-ce7874783da5.png">
+ <img width="1440" alt="bokvenn-homepage-screenshot" src="https://user-images.githubusercontent.com/96269610/224571346-a100cd53-4984-4708-b466-647504abb630.png">
+  <img width="1440" alt="bokvenn-profilepage-screenshot" src="https://user-images.githubusercontent.com/96269610/224571350-4b116c66-830e-4413-92f9-83bcf385a776.png">
 
  ## Description
  A social media application created with bootstrap, SCSS and JavaScript. Made during Noroff School of Technology and Digital Media year 2 of Front-End Development for CSS Frameworks.
@@ -48,7 +49,8 @@
 
  > [_Web prototype_](https://xd.adobe.com/view/09d0d44f-8372-47e8-a13e-a3537058366c-5c83/)
 
- ## Acknowledgement
+ ## Work process
+ > [_Github project board_](https://github.com/users/mariesaeter/projects/3/views/1)
 
  ### Images and icons
  + All images are gathered from [unsplash.com](https://unsplash.com)
