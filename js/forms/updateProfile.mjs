@@ -1,7 +1,7 @@
 import { readProfile, updateProfile } from "../api/profiles/index.mjs";
 
 import { loadLocal, saveLocal } from "../storage/index.mjs";
-import { backOnePage } from "../tools/location/history.mjs";
+import { redirect } from "../tools/location/reload.mjs";
 
 /**
  * Selects current profile throguh local storage, adds current values to the form
@@ -9,10 +9,20 @@ import { backOnePage } from "../tools/location/history.mjs";
  */
 export async function setUpdateProfileForm() {
   const form = document.querySelector("#editProfile");
+  const url = new URL(location.href);
+
   try {
     if (form) {
-      const { name, email, avatar } = loadLocal("profile");
-      const { age, from, genre } = loadLocal("profileInfo");
+      const name = url.searchParams.get("name");
+      // const user = readProfile(name);
+      const { email, avatar } = loadLocal("profile");
+      if (loadLocal("profileInfo")) {
+        const { age, from, genre } = loadLocal("profileInfo");
+
+        form.age.value = age;
+        form.from.value = from;
+        form.genre.value = genre;
+      }
 
       form.name.value = name;
       form.email.value = email;
@@ -22,9 +32,6 @@ export async function setUpdateProfileForm() {
       // add values to form
       form.banner.value = profile.banner;
       form.avatar.value = profile.avatar;
-      form.age.value = age;
-      form.from.value = from;
-      form.genre.value = genre;
 
       form.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -35,7 +42,7 @@ export async function setUpdateProfileForm() {
         profile.email = email;
 
         // Save additional information from edit form
-        const { age, from, genre } = profile;
+        const { age, from, genre, ...user } = profile;
 
         const info = {
           age,
@@ -45,8 +52,9 @@ export async function setUpdateProfileForm() {
 
         saveLocal("profileInfo", info);
 
-        updateProfile(profile);
-        saveLocal("profile", profile);
+        updateProfile(user);
+        saveLocal("profile", user);
+        redirect(`/profile/?name=${name}`);
       });
     }
   } catch (error) {

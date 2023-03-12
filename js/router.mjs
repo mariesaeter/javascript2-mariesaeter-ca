@@ -20,6 +20,7 @@ export default function router() {
     case "/profile/edit/":
       profile.notLoggedIn();
       listeners.setUpdateProfileForm();
+      profile.displayProfileEdit();
 
       break;
     case "/profile/":

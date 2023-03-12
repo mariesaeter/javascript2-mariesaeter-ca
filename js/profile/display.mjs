@@ -19,6 +19,13 @@ export async function displayProfile() {
     profileName.innerText = `${name}'s feed`;
   }
 
+  const editLink = document.getElementById("editProfileBtn");
+  editLink.href = `/profile/edit/?name=${name}`;
+  const user = loadLocal("profile");
+  if (name !== user.name) {
+    editLink.style.display = "none";
+  }
+
   const profileSection = document.getElementById("profileInfoContainer");
 
   renderProfileTemplate(profile, profileInfo, profileSection);
