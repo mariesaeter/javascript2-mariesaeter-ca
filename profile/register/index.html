@@ -83,9 +83,7 @@
               <h1 class="text-center mb-4">Register account to Bokvenn</h1>
               <form id="register-form" name="register">
                 <div class="mb-3">
-                  <label for="inputName" class="form-label"
-                    >Name (First and last)</label
-                  >
+                  <label for="inputName" class="form-label">Name</label>
                   <input
                     type="text"
                     name="name"
@@ -97,7 +95,8 @@
                 </div>
                 <div class="mb-3">
                   <label for="inputEmail" class="form-label"
-                    >Email address</label
+                    >Email address (must be @noroff.no or
+                    @stud.noroff.no)</label
                   >
                   <input
                     type="email"
@@ -105,17 +104,22 @@
                     class="form-control"
                     id="inputEmail"
                     placeholder="Write your email here"
+                    pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                    title="Only Noroff emails can register"
                     required
                   />
                 </div>
                 <div class="mb-4">
-                  <label for="inputPassword" class="form-label">Password</label>
+                  <label for="inputPassword" class="form-label"
+                    >Password (minimum 8 characters)</label
+                  >
                   <input
                     type="password"
                     name="password"
                     class="form-control"
                     id="inputPassword"
                     placeholder="Write your password here"
+                    minlength="8"
                     required
                   />
                 </div>

@@ -31,7 +31,9 @@ export function setRegisterForm() {
     saveLocal("profileInfo", info);
 
     registerUser(user);
+
     // send to login page
+
     redirect("/");
   });
 }
