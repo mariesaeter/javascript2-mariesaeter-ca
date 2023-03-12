@@ -51,6 +51,12 @@
 
  ## Work process
  > [_Github project board_](https://github.com/users/mariesaeter/projects/3/views/1)
+ 
+ ## To do
+ > Add alerts and form validations
+ > Add log out functionality
+ > Add like and comment functionality
+ > Add Follow friends option
 
  ### Images and icons
  + All images are gathered from [unsplash.com](https://unsplash.com)
