@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Welcome page of Bokvenn" />
-    <title>Bokvenn | Welcome</title>
+    <meta name="description" content="Post page of Bokvenn" />
+    <title>Bokvenn | Post</title>
     <!-- Website icon -->
     <link
       rel="icon"
@@ -22,9 +22,9 @@
     <!-- Bootstrap stylesheet -->
     <link
       rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <!-- Fontawsome icons script -->
     <script
       src="https://kit.fontawesome.com/a2324745d3.js"
@@ -41,7 +41,7 @@
           class="container-fluid justify-content-between mx-md-4 mx-lg-4 mx-xl-5"
         >
           <a class="navbar-brand w-25" href="/home/"
-            ><img src="images/logo.png" alt="Bokvenn logo"
+            ><img src="/images/logo.png" alt="Bokvenn logo"
           /></a>
           <ul class="navbar-nav nav flex-row align-items-center">
             <li class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase">
@@ -50,7 +50,7 @@
                 aria-current="page"
                 href="/home/"
                 ><img
-                  src="images/home-icon.png"
+                  src="/images/home-icon.png"
                   class="w-50"
                   alt="Icon formed as a B for Bokvenn"
                 /><span class="mt-1">Home</span></a
@@ -59,7 +59,7 @@
             <li
               class="nav-item text-uppercase d-flex justify-content-center mx-md-1 mx-lg-1"
             >
-              <a class="nav-link text-center w-50" href="index.html"
+              <a class="nav-link text-center w-50" href="/index.html"
                 >Sign out</a
               >
             </li>
@@ -67,33 +67,39 @@
               class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase"
               id="profileImg"
             ></li>
+            <li
+              class="nav-item ps-1 pe-1 mx-md-2 mx-lg-2 text-uppercase position-relative"
+            >
+              <form id="searchForm" class="d-flex">
+                <a
+                  class="nav-link d-flex flex-column align-items-center position-absolute search p-0"
+                >
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <span class="mt-1">Search</span>
+                </a>
+                <div class="d-flex">
+                  <input
+                    required
+                    minlength="3"
+                    type="search"
+                    name="word"
+                    class="search-open position-relative overflow-hidden bg-transparent form-control"
+                    placeholder="search here..."
+                  />
+                </div>
+              </form>
+            </li>
           </ul>
         </div>
       </nav>
     </header>
     <!-- Main -->
     <main class="mx-3 mx-sm-2 mt-5 pt-2">
-      <!-- Sign in form -->
       <div class="container p-3 my-3">
-        <div class="row justify-content-center">
+        <div class="row align-items-center justify-content-center">
           <div class="col-12 col-sm-12 col-md-9 col-l-7 col-xl-7">
-            <div class="bg-white rounded shadow p-3 my-3">
-              <h1 class="text-center mb-4">
-                Log in or sign up to get access to Bokvenn :)
-              </h1>
-              <div class="w-100 d-flex align-items-center flex-column mt-2">
-                <a
-                  href="./profile/login/"
-                  class="btn btn-primary rounded-pill text-white mb-3 w-75"
-                  >Log in</a
-                >
-                <a
-                  href="./profile/register/"
-                  class="btn btn-secondary rounded-pill mb-4 w-75"
-                  >Sign up</a
-                >
-              </div>
-            </div>
+            <!-- Display single post post -->
+            <div id="post"></div>
           </div>
         </div>
       </div>
